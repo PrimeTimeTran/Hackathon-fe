@@ -9,7 +9,7 @@ function Carousel2() {
         <Carousel.Item className="height95vh">
           <img
             className="d-block w-100"
-            src="https://images.unsplash.com/photo-1601841162542-956af38ba052?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
+            src="https://images.unsplash.com/photo-1576765974257-b414b9ea0051?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=757&q=80"
             alt="First slide"
           />
           <Carousel.Caption className="color-title">
@@ -26,7 +26,7 @@ function Carousel2() {
         <Carousel.Item className="height95vh">
           <img
             className="d-block w-100"
-            src="https://images.unsplash.com/photo-1585435557343-3b092031a831?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+            src="https://images.unsplash.com/photo-1576765974257-b414b9ea0051?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=757&q=80"
             alt="Second slide"
           />
 
