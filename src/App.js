@@ -17,7 +17,7 @@ function App() {
         <Route path="/" exact component={NewHomePage} />
         <Route path="/about" exact component={AboutPage} />
         <Route path="/funding" exact component={FundingPage} />
-        <Route path="/neighborhood" exact component={HomePage} />
+        <Route path="/map" exact component={HomePage} />
         <Route
           path="/fundRequestDetailPage"
           exact
