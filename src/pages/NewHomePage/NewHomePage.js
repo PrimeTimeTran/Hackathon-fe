@@ -8,6 +8,7 @@ import { ClipLoader } from "react-spinners";
 import "./style.css";
 import ProviderPetition from "../../components/ProviderPetition/ProviderPettion";
 import PaginationBar from "../../components/PaginationBar/PaginationBar";
+import NewSideBar from "../../components/NewSideBar/NewSideBar";
 const NewHomePage = ({ handleClick }) => {
   const [pageNum, setPageNum] = useState(1);
   const loading = useSelector((state) => state.petition.loading);
@@ -31,6 +32,7 @@ const NewHomePage = ({ handleClick }) => {
   return (
     <>
       <Container>
+        <NewSideBar />
         {loading ? (
           <div
             className="d-flex justify-content-center align-items-center"
