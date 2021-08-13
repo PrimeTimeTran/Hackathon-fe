@@ -1,9 +1,6 @@
 import React from "react";
-import { Button } from "react-bootstrap";
-
+import { Button, Card } from "react-bootstrap";
 import "./Info.css";
-
-import { Card } from "react-bootstrap";
 
 const Info = () => {
   return (
