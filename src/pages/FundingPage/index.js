@@ -4,7 +4,7 @@ import Introduction from "../../components/Introduction/Introduction";
 import Story from "../../components/Story/Story";
 import ReceiversCarousel from "../../components/ReceiversCarousel/ReceiversCarousel";
 
-import { getDonationRequests } from "../../redux/DonationRequests/DonationRequestsAction";
+import { getDonationRequests } from "../../Redux/DonationRequests/DonationRequestsAction";
 import { useDispatch, useSelector } from "react-redux";
 
 const FundingPage = () => {
