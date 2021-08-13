@@ -4,7 +4,7 @@ import { BrowserRouter as Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import FundingPage from "./pages/FundingPage";
-import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FunRequestDetailPage";
+import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundRequestDetailPage";
 import Navbar from "./components/Navbar";
 
 function App() {
