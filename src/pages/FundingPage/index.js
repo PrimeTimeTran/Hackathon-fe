@@ -3,7 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import Introduction from "../../components/Introduction/Introduction";
 import Story from "../../components/Story/Story";
 import ReceiversCarousel from "../../components/ReceiversCarousel/ReceiversCarousel";
-
+import Carousel2 from "../../components/CarouselMainPage/Carousel2";
 import { getDonationRequests } from "../../redux/DonationRequests/DonationRequestsAction";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -15,7 +15,7 @@ const FundingPage = () => {
   );
   return (
     <div>
-      {/* <Carousel2 /> */}
+      <Carousel2 />
       <Introduction />
       <br />
       <center>
