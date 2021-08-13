@@ -4,7 +4,7 @@ import api from "../apiService";
 import { toastSuccess, toastFail } from "../Toast/ToastAction";
 
 const receiverRequest =
-  (pageNum = 1, limit = 6, query = null, sortBy = null) =>
+  (pageNum = 1, limit = 9, query = null, sortBy = null) =>
   async (dispatch) => {
     dispatch({ type: types.GET_RECEIVERS_REQUEST, payload: null });
     try {

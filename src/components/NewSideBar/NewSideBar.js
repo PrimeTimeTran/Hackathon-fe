@@ -12,7 +12,7 @@ const NewSideBar = () => {
   const handleShow = () => setShow(true);
   const handleShowReceive = () => setReceive(true);
   return (
-    <div className="container">
+    <>
       <Row>
         <Col xs={3} className="Cl-SideBar">
           <Card className="cardSideBar">
@@ -68,7 +68,7 @@ const NewSideBar = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </>
   );
 };
 

@@ -11,20 +11,14 @@
 .itemProvider_Img {
   width: 150px;
   height: 150px;
-
   border-radius: 10px;
 }
 
 .formgiver {
-  margin: 20px;
+  padding-top: 5px;
+  margin: 5px;
 }
 
-.itemName {
-  margin: 20px;
-}
-.provider_Location {
-  padding-top: 20px;
-}
 .provider_body {
   text-align: left;
 }

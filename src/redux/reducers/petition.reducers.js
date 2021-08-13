@@ -20,7 +20,7 @@ const petitionReducer = (state = initialState, action) => {
       return {
         ...state,
         recivers: payload,
-        totalPageNum: payload,
+        totalPageNum: payload.totalPages,
         loading: false,
       };
 
@@ -28,7 +28,7 @@ const petitionReducer = (state = initialState, action) => {
       return {
         ...state,
         providers: payload,
-        totalPageNum: payload,
+        totalPageNum: payload.totalPages,
         loading: false,
       };
     case types.GET_SINGLE_RECEIVER_SUCCESS:
