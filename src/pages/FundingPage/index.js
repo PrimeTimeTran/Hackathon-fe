@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import Footer from "../../components/Footer/Footer";
-import Introduction from "../../components/Introduction/Introduction";
 import Story from "../../components/Story/Story";
 import ReceiversCarousel from "../../components/ReceiversCarousel/ReceiversCarousel";
-
+import Info from "../../components/Info/Info";
+import Carousel2 from "../../components/CarouselMainPage/Carousel2";
 import { getDonationRequests } from "../../redux/DonationRequests/DonationRequestsAction";
 import { useDispatch, useSelector } from "react-redux";
 import ReceiverCard from "../../components/ReceiverCard/ReceiverCard";
@@ -24,10 +24,11 @@ const FundingPage = () => {
 
   return (
     <div>
-      {/* <Carousel2 /> */}
+      <Carousel2 />
+      <br />
+      <Info />
+      <br />
       <ReceiverCard {...json} />
-
-      <Introduction />
       <br />
       <center>
         <ReceiversCarousel items={donationRequests.slice(0, 10) || []} />
