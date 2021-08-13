@@ -6,6 +6,7 @@ import ReceiversCarousel from "../../components/ReceiversCarousel/ReceiversCarou
 
 import { getDonationRequests } from "../../redux/DonationRequests/DonationRequestsAction";
 import { useDispatch, useSelector } from "react-redux";
+import ReceiverCard from "../../components/ReceiverCard/ReceiverCard";
 
 const FundingPage = () => {
   const dispatch = useDispatch();
@@ -13,9 +14,19 @@ const FundingPage = () => {
   const donationRequests = useSelector(
     (state) => state.requests.donationRequests
   );
+  let json = {
+    media: "",
+    receiver: "Ryan",
+    moneyFunded: 253000,
+    description: "Gia đình bị ảnh hưởng bởi Covid, xin bà con giúp đỡ",
+    percentFunded: 83,
+  };
+
   return (
     <div>
       {/* <Carousel2 /> */}
+      <ReceiverCard {...json} />
+
       <Introduction />
       <br />
       <center>
