@@ -7,7 +7,6 @@ import AboutPage from "./pages/AboutPage";
 import FundingPage from "./pages/FundingPage";
 import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundRequestDetailPage";
 import Navbar from "./components/Navbar";
-import FunDetailRequestInfo from "./components/FunDetailRequestInfo/FunDetailRequestInfo";
 import NewHomePage from "./pages/NewHomePage/NewHomePage";
 
 function App() {
@@ -15,10 +14,10 @@ function App() {
     <div>
       <Navbar />
       <Switch>
-        {/* <Route path="/" exact component={HomePage} /> */}
         <Route path="/" exact component={NewHomePage} />
         <Route path="/about" exact component={AboutPage} />
         <Route path="/funding" exact component={FundingPage} />
+        <Route path="/neighborhood" exact component={HomePage} />
         <Route
           path="/fundRequestDetailPage"
           exact
