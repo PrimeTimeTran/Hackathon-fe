@@ -1,0 +1,35 @@
+.provider_Contents {
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  text-align: center;
+  margin: 20px;
+  box-shadow: 2px 2px 3px 1px pink;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.itemProvider_Img {
+  width: 150px;
+  height: 150px;
+
+  border-radius: 10px;
+}
+
+.formgiver {
+  margin: 20px;
+}
+
+.itemName {
+  margin: 20px;
+}
+.provider_Location {
+  padding-top: 20px;
+}
+.provider_body {
+  text-align: left;
+}
+.providerImg {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+}
