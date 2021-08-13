@@ -1,9 +1,9 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
 import "./Info.css";
 
-import { Card, CardGroup, Col, ProgressBar, Row } from "react-bootstrap";
+import Card from "react-bootstrap";
 
 const Info = () => {
   return (
