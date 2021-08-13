@@ -1,4 +1,4 @@
-import { TOAST_FAIL, TOAST_SUCCESS } from "./ToastType";
+import { TOAST_FAIL, TOAST_SUCCESS } from "../constants/toast.constant";
 
 const initialState = {
   loading: false,
