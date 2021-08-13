@@ -1,9 +1,10 @@
 import React from "react";
+import NewSideBar from "../../components/NewSideBar/NewSideBar";
 
 const NewHomePage = () => {
   return (
     <div className="container">
-      <div></div>
+      <NewSideBar />
       <h1>This is new homepage</h1>
     </div>
   );
