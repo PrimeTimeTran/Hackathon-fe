@@ -8,6 +8,6 @@ export default combineReducers({
   toast: ToastReducer,
   requestDetail: DonationRequestReducer,
   requests: DonationRequestsReducer,
-  requestReducer: requestsReducer
+  requestReducer: requestsReducer,
   // TODO: add reducers in here
 });
