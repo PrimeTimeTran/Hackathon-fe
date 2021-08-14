@@ -22,8 +22,13 @@
   display: flex;
   flex-direction: column;
   height: 30vh;
+  top: 30%;
 }
-
+@media only screen and (min-width: 600px) {
+  .cardSideBar {
+    height: 70vh;
+  }
+}
 .cardBotton button {
   background-color: #ff4c68;
   padding-top: 5px;
@@ -39,7 +44,8 @@
 
 .modalsTitle {
   text-align: center;
-  padding-left: 147px;
+  margin: auto;
+  width: 100%;
 }
 
 .modalsFooter {
