@@ -22,7 +22,7 @@ const receiverRequest =
       const res = await api.get(
         `/petitions/receiver?page=${pageNum}&limit=${limit}${queryString}${sortByString}`
       );
-
+      console.log(res)
       dispatch({ type: types.GET_RECEIVERS_SUCCESS, payload: res.data.data });
     } catch (err) {
       console.log(err);
