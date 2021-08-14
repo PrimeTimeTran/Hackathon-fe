@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Card, Col, Modal, Row } from "react-bootstrap";
 import "./NewSideBar.css";
 
-const NewSideBar = () => {
+const NewSideBar = ({ topBar }) => {
   const [show, setShow] = useState(false);
   const [receive, setReceive] = useState(false);
 
@@ -13,31 +13,29 @@ const NewSideBar = () => {
   const handleShowReceive = () => setReceive(true);
   return (
     <>
-      <Row>
-        <Col xs={3} className="Cl-SideBar">
-          <Card className="cardSideBar">
-            <Card.Header className="cardTitleTex">
-              {" "}
-              <strong>You Want? </strong>
-            </Card.Header>
-            <Card.Body>
-              <div className="cardBotton">
-                <Button variant="light" className="btn" onClick={handleShow}>
-                  Donate
-                </Button>
-                <br />
-                <Button
-                  variant="light"
-                  className="btn"
-                  onClick={handleShowReceive}
-                >
-                  Receive
-                </Button>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+      <Col className={topBar ? `Cl-SideBar topBar` : "Cl-SideBar"}>
+        <Card className="cardSideBar">
+          <Card.Header className="cardTitleTex">
+            {" "}
+            <strong>You Want? </strong>
+          </Card.Header>
+          <Card.Body>
+            <div className="cardBotton">
+              <Button variant="light" className="btn" onClick={handleShow}>
+                Donate
+              </Button>
+              <br />
+              <Button
+                variant="light"
+                className="btn"
+                onClick={handleShowReceive}
+              >
+                Receive
+              </Button>
+            </div>
+          </Card.Body>
+        </Card>
+      </Col>
 
       {/* modals donate */}
       <Modal show={show} onHide={handleClose}>
