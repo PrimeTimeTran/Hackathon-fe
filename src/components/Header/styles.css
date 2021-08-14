@@ -1,8 +1,30 @@
 .nav-bar {
+  height: 8vh;
   padding-left: 50px;
   padding-right: 50px;
-  background-color: #ff4c68;
+  box-shadow: 0 4px 2px -2px rgb(255,76,104);
+  background: white;
+  z-index: 9999;
+}
+nav a {
+  font-family: 'Open Sans', sans-serif !important;
+  color: #ff4c68 !important;
+}
+.nav-link {
+  font-size: 20px;
+  margin: 0 12px
+}
+
+.display-flex{
+  display: flex;
+  justify-content: space-between;
+}
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+  color: #ff4c68 !important;
+
 }
 .bg-lightpink {
   background-color: rgba(255, 182, 193, 0.486);
 }
+

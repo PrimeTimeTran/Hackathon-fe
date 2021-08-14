@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-import RequestForm from "../RequestFrom";
+// import RequestForm from "../RequestFrom";
 
 import logo from "./logo.png";
 
@@ -27,34 +27,37 @@ const Header = () => {
 
   return (
     <>
+    
       <Navbar
         className="nav-bar justify-content-md-center "
         variant="dark"
         expand="lg"
+        sticky="top"
       >
-        <Link style={{ textDecoration: "none" }} as={Link} to={`/`}>
-          <Navbar.Brand>
-            <img
+        <Link style={{ textDecoration: "none" }} as={Link} to={`/`}
+        style={{ flexBasis:'32%'}}>
+        <img
               src={logo}
               alt=""
               width="32"
               height="32"
               className="d-inline-block align-top"
             />
-            SOSmap
+          <Navbar.Brand>
+            SOS Map
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse
-          id="basic-navbar-nav"
-          style={{ display: "flex", justifyContent: "space-between" }}
-        >
-          <Nav className="mr-auto ">
+          id="basic-navbar-nav">
+          <Nav className="mr-auto " style={{ display: "flex", justifyContent: "space-between"}}>
             <Nav.Link href="#aboutus">About us</Nav.Link>
-            <Nav.Link href="#successstories">Success stories</Nav.Link>
+            <Nav.Link href="#successstories">Stories</Nav.Link>
             <Nav.Link href="/requests">Requests</Nav.Link>
+            <Nav.Link href="/login">Log in</Nav.Link>
+            <Nav.Link href="/signup">Sign up</Nav.Link>
           </Nav>
-          <div className=" justify-content-md-center">
+          {/* <div className=" justify-content-md-center">
             <Nav className="mr-auto justify-content-end">
               <Button
                 variant="outlined"
@@ -63,14 +66,12 @@ const Header = () => {
               >
                 Make a request
               </Button>
-              <Nav.Link href="/login">LogIn</Nav.Link>
-              <Nav.Link href="/signup">Sign up</Nav.Link>
             </Nav>
-          </div>
+          </div> */}
         </Navbar.Collapse>
       </Navbar>
 
-      <RequestForm open={open} setOpen={setOpen} />
+      {/* <RequestForm open={open} setOpen={setOpen} /> */}
     </>
   );
 };
