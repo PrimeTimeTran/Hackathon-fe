@@ -14,6 +14,8 @@ import NewFooter from "../../components/NewFooter/NewFooter";
 import Footer from "../../components/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import MainForm from "../../components/Form/MainForm"
+
 const NewHomePage = ({ handleClick }) => {
   const [pageNum, setPageNum] = useState(1);
 
@@ -42,7 +44,7 @@ const NewHomePage = ({ handleClick }) => {
     history.push(`/petitions/${id}`);
   };
 
-  const handleClickOnProvider = () => {};
+  const handleClickOnProvider = () => { };
   return (
     <>
       <Container className="mt-5">
@@ -133,6 +135,17 @@ const NewHomePage = ({ handleClick }) => {
             modalShow={modalShow}
           />
         </Modal>
+        <Modal show={show} onHide={handleClose} fullscreen="sm-down" contentClassName="form-modal-content" scrollable>
+          <Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
+            {<MainForm handleClose={handleClose} />}
+          </Modal.Body>
+          {/* <Modal.Footer></Modal.Footer> */}
+        </Modal>
+        <div className="join-button">
+          <Button variant="dark" size="lg" onClick={handleShow}>
+            Tôi muốn tham gia
+          </Button>
+        </div>
       </Container>
     </>
   );
