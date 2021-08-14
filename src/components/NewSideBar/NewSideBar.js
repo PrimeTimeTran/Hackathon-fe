@@ -22,12 +22,12 @@ const NewSideBar = () => {
             </Card.Header>
             <Card.Body>
               <div className="cardBotton">
-                <Button variant="success" className="btn" onClick={handleShow}>
+                <Button variant="light" className="btn" onClick={handleShow}>
                   Donate
                 </Button>
                 <br />
                 <Button
-                  variant="primary"
+                  variant="light"
                   className="btn"
                   onClick={handleShowReceive}
                 >
@@ -45,10 +45,10 @@ const NewSideBar = () => {
           <Modal.Title className="modalsTitle">Want To Donate</Modal.Title>
         </Modal.Header>
         <Modal.Footer className="modalsFooter">
-          <Button variant="success" className="buttonModal">
+          <Button variant="light" className="buttonModal">
             Fund
           </Button>
-          <Button variant="primary" className="buttonModal">
+          <Button variant="light" className="buttonModal">
             Food
           </Button>
         </Modal.Footer>
@@ -60,10 +60,10 @@ const NewSideBar = () => {
           <Modal.Title className="modalsTitle">Want To Receive</Modal.Title>
         </Modal.Header>
         <Modal.Footer className="modalsFooter">
-          <Button variant="success" className="buttonModal">
+          <Button variant="light" className="buttonModal">
             Fund
           </Button>
-          <Button variant="primary" className="buttonModal">
+          <Button variant="light" className="buttonModal">
             Food
           </Button>
         </Modal.Footer>
