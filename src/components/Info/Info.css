@@ -1,0 +1,51 @@
+.infoBody {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.leftSide {
+  margin-right: 3vw;
+  margin-left: 1vw;
+}
+
+.rightSide {
+  margin-right: 1vw;
+}
+
+.infoBox {
+  margin-left: 22.5vw;
+  margin-right: 24.5vw;
+  font-family: "Roboto", sans-serif;
+}
+
+.infoBoxCard {
+  border-radius: 8px;
+  background: #eeeeee;
+}
+
+.infoBoxTitle {
+  background: rgb(22, 190, 163);
+  background: linear-gradient(
+    0deg,
+    rgba(22, 190, 163, 1) 13%,
+    rgba(45, 253, 146, 0.7679446778711485) 100%
+  );
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.infoBoxSubTitle {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.infoBoxText {
+  font-size: 20px;
+  text-align: justify;
+}
+
+.infoBoxButton {
+  border-radius: 8%;
+  font-size: 20px;
+}
