@@ -12,7 +12,9 @@ import PaginationBar from "../../components/PaginationBar/PaginationBar";
 import NewSideBar from "../../components/NewSideBar/NewSideBar";
 import NewFooter from "../../components/NewFooter/NewFooter";
 import Footer from "../../components/Footer/Footer";
+
 import MainForm from "../../components/Form/MainForm"
+
 
 const NewHomePage = ({ handleClick }) => {
   const [pageNum, setPageNum] = useState(1);
@@ -119,6 +121,7 @@ const NewHomePage = ({ handleClick }) => {
             loading={loading}
           />
         </Row>
+
         <Modal show={show} onHide={handleClose} fullscreen="sm-down" contentClassName="form-modal-content" scrollable>
 
           <Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
@@ -130,6 +133,7 @@ const NewHomePage = ({ handleClick }) => {
             Tôi muốn tham gia
           </Button>
         </div>
+
         <NewFooter />
         <Footer />
       </Container>
