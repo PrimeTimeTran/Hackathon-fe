@@ -13,7 +13,7 @@ import {
 import { toastFail, toastSuccess } from "../../redux/Toast/ToastAction";
 import "./Style.css";
 import NumberFormat from "react-number-format";
-// import Imgupload from "../Imgupload/Imgupload";
+import Imgupload from "../Imgupload/Imgupload";
 // import { useParams } from "react-router-dom";
 
 // import { getDonationRequest } from "../../redux/DonationRequest/DonationRequestAction";
@@ -158,7 +158,7 @@ function ReceiverBankAccount() {
                 to the receiver account
               </div>
               <div className="verificationButtons">
-                {/* <Imgupload className="rightButton" /> */}
+                <Imgupload className="rightButton" />
                 <Button
                   variant=""
                   className="btn-primary-t leftButton"
