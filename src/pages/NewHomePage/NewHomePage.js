@@ -103,13 +103,10 @@ const NewHomePage = ({ handleClick }) => {
                   </Tab>
                 </Tabs>
                 <Modal show={show} onHide={handleClose} fullscreen="sm-down" contentClassName="form-modal-content" scrollable>
-                  {/* <Modal.Header closeButton>
-					<Modal.Title>Modal heading</Modal.Title>
-				</Modal.Header> */}
+
                   <Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
                     {<MainForm handleClose={handleClose} />}
                   </Modal.Body>
-                  {/* <Modal.Footer></Modal.Footer> */}
                 </Modal>
                 <div className="join-button">
                   <Button variant="dark" size="lg" onClick={handleShow}>
