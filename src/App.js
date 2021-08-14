@@ -2,17 +2,17 @@ import React from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
-
+import Header from "./components/Header/Header";
 import AboutPage from "./pages/AboutPage";
 import FundingPage from "./pages/FundingPage";
 import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundRequestDetailPage";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import NewHomePage from "./pages/NewHomePage/NewHomePage";
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <Header />
       <Switch>
         <Route path="/" exact component={NewHomePage} />
         <Route path="/about" exact component={AboutPage} />
