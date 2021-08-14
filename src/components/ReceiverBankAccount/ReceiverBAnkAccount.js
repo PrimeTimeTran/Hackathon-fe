@@ -9,17 +9,17 @@ import {
   InputGroup,
   Row,
 } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import { toastFail, toastSuccess } from "../../redux/Toast/ToastAction";
 import "./Style.css";
 import NumberFormat from "react-number-format";
 // import Imgupload from "../Imgupload/Imgupload";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
-import { getDonationRequest } from "../../redux/DonationRequest/DonationRequestAction";
+// import { getDonationRequest } from "../../redux/DonationRequest/DonationRequestAction";
 
 function ReceiverBankAccount() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [state, setState] = useState({
     donation: "",
     name: "",
@@ -27,20 +27,20 @@ function ReceiverBankAccount() {
     Message: "",
     anonymousMode: "",
   });
-  const { id } = useParams();
+  // const { id } = useParams();
 
-  useEffect(() => dispatch(getDonationRequest(id)), []);
-  const { media, need, amount_remaining, receiver, details, createdAt } =
-    useSelector((state) => state.requestDetail.donationRequest);
+  // useEffect(() => dispatch(getDonationRequest(id)), []);
+  // const { media, need, amount_remaining, receiver, details, createdAt } =
+  //   useSelector((state) => state.requestDetail.donationRequest);
 
   let a;
   const handleOnclick = (e) => {
-    e.preventDefault();
-    if (state.donation >= 10000) {
-      dispatch(toastSuccess(state));
-    } else {
-      dispatch(toastFail(state));
-    }
+    // e.preventDefault();
+    // if (state.donation >= 10000) {
+    //   dispatch(toastSuccess(state));
+    // } else {
+    //   dispatch(toastFail(state));
+    // }
   };
   console.log("checkstate", state);
   return (
@@ -56,15 +56,15 @@ function ReceiverBankAccount() {
                       <Card.Img
                         variant="top"
                         style={{ height: "30vh" }}
-                        src={media}
+                        // src={media}
                       />
                     </Col>
                     <Col xs={12} md={8}>
                       <h5 style={{ color: "grey" }} className="padding2vw">
                         Your supporting donation will benefit
-                        {receiver && receiver.name}
+                        {/* {receiver && receiver.name} */}
                       </h5>
-                      <p> {details} </p>
+                      {/* <p> {details} </p> */}
                       <div>Bank : ACB</div>
                       <dic>Bank Account: 163287498xxx</dic>
                     </Col>
