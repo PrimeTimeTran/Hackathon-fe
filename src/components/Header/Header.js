@@ -29,8 +29,8 @@ const Header = () => {
     <>
     
       <Navbar
-        className="nav-bar justify-content-md-center "
-        variant="dark"
+        className="nav-bar justify-content-md-space-between justify-content-sm-space-around navpar"
+        variant="light"
         expand="lg"
         sticky="top"
       >
@@ -47,7 +47,7 @@ const Header = () => {
             SOS Map
           </Navbar.Brand>
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="navHam"/>
         <Navbar.Collapse
           id="basic-navbar-nav">
           <Nav className="mr-auto " style={{ display: "flex", justifyContent: "space-between"}}>
