@@ -40,9 +40,9 @@ const ProviderPetition = ({ provider, handleClick }) => {
                 </>
               ))}
             </div>
-            <div className="status">{`Status: ${provider?.status}`}</div>
+            <div>{`Status: ${provider?.status}`}</div>
             Create at:{" "}
-            <Moment fromNow ago>
+            <Moment className="status" fromNow ago>
               {provider?.isolatedDate}
             </Moment>
           </div>
