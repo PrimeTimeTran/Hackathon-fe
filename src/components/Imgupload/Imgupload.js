@@ -24,7 +24,7 @@ const Imgupload = () => {
         id="upload_widget"
         class="cloudinary-button"
       >
-        Upload files
+        Upload pictures
       </button>
       <img
         height="300px"

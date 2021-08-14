@@ -1,12 +1,10 @@
 import React from "react";
-import RequestForm from "../../components/RequestFrom";
-import RequestPage from "../../components/RequestPage";
+import FundRequestInfo from "../../components/FundRequestInfo/FundRequestInfo";
 
 function FundRequestPage() {
   return (
     <div>
-      <RequestPage />
-      <RequestForm />
+      <FundRequestInfo />
     </div>
   );
 }

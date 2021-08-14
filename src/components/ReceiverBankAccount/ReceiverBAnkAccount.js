@@ -96,7 +96,7 @@ function ReceiverBankAccount() {
                   </div>
                 </div>
                 <div className="padding2vw">
-                  <Form.Label>Your name(required)</Form.Label>
+                  <Form.Label>Your Name(required)</Form.Label>
                   <InputGroup className="mb-3">
                     <FormControl
                       className="formControl"
@@ -108,7 +108,7 @@ function ReceiverBankAccount() {
                     />
                   </InputGroup>
                 </div>
-                <Form.Label>Email address (optional)</Form.Label>
+                <Form.Label>Your Email address (optional)</Form.Label>
                 <InputGroup className="mb-3">
                   <FormControl
                     className="formControl"

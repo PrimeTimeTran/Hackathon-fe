@@ -7,7 +7,7 @@ import FundingPage from "./pages/FundingPage";
 import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundRequestDetailPage";
 import Navbar from "./components/Navbar";
 import FundDonationBankTransfer from "../src/pages/FundDonationBankTransfer/FundDonationBankTransfer";
-// import FundRequestPage from "./pages/FundRequestPage/FundRequestPage";
+import FundRequestPage from "./pages/FundRequestPage/FundRequestPage";
 function App() {
   return (
     <div>
@@ -27,7 +27,7 @@ function App() {
           component={FundDonationBankTransfer}
         />
       </Switch>
-      {/* <Route path="/FundRequestPage" exact component={FundRequestPage} /> */}
+      <Route path="/FundRequestPage" exact component={FundRequestPage} />
     </div>
   );
 }
