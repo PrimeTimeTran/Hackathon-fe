@@ -11,6 +11,8 @@
 }
 
 .cardTitleTex {
+  background-color: none !important;
+  border-bottom: none;
   text-align: center;
   /* color: red; */
 }
@@ -21,7 +23,12 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  height: 30vh;
+  height: 20vh;
+  top: 30%;
+}
+
+.cardSideBar {
+  box-shadow: 2px 3px 7px #888888;
 }
 
 .cardBotton button {
@@ -39,7 +46,8 @@
 
 .modalsTitle {
   text-align: center;
-  padding-left: 147px;
+  margin: auto;
+  width: 100%;
 }
 
 .modalsFooter {
