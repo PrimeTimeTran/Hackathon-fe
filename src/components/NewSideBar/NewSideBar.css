@@ -1,0 +1,54 @@
+.Cl-SideBar {
+  /* padding-top: 20px; */
+  border-radius: 5px;
+}
+
+.cardTitleTex {
+  text-align: center;
+  /* color: red; */
+}
+
+.cardBotton {
+  /* border: 5px solid yellow; */
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+}
+
+.cardBotton button {
+  background-color: #ff4c68;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+.cardBotton button:hover {
+  background-color: #ff9ead;
+}
+
+.modalsTitle {
+  text-align: center;
+  padding-left: 147px;
+}
+
+.modalsFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.buttonModal {
+  width: 150px;
+  background-color: #ff4c68;
+  border: none;
+  color: white;
+}
+
+.buttonModal:hover {
+  background-color: #ff9ead;
+}
