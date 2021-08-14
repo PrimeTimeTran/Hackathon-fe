@@ -1,0 +1,12 @@
+.grey-box {
+  background-color: rgb(243, 240, 240);
+  border-radius: 5%;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+.btn-pink {
+  background-color: #ff4c68;
+  color: white;
+}

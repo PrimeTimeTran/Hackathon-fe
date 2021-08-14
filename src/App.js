@@ -1,24 +1,28 @@
 import React from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
 
-import HomePage from './pages/HomePage'
-import AboutPage from './pages/AboutPage'
+import HomePage from "./pages/HomePage";
+import Header from "./components/Header/Header";
+import AboutPage from "./pages/AboutPage";
 import FundingPage from "./pages/FundingPage";
-
+import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundRequestDetailPage";
+// import Navbar from "./components/Navbar";
 import NewHomePage from "./pages/NewHomePage/NewHomePage";
-import Header from "./components/Header/Header"
-import FunDetailRequestInfo from "./components/FunDetailRequestInfo/FunDetailRequestInfo";
 
 function App() {
   return (
     <div>
       <Header />
       <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/newhomepage" exact component={NewHomePage} />
+        <Route path="/" exact component={NewHomePage} />
         <Route path="/about" exact component={AboutPage} />
         <Route path="/funding" exact component={FundingPage} />
-        <Route path="/funDetailPage" exact component={FunDetailRequestInfo} />
+        <Route path="/map" exact component={HomePage} />
+        <Route
+          path="/fundRequestDetailPage"
+          exact
+          component={FundRequestDetailPage}
+        />
       </Switch>
     </div>
   );
