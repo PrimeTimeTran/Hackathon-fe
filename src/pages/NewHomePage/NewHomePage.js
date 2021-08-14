@@ -53,7 +53,7 @@ const NewHomePage = ({ handleClick }) => {
   const handleClickOnProvider = () => { };
   return (
     <>
-      <Map receivers={recivers} providers={providers} setShow={setShow} />
+      
       {/* <Modal show={show} onHide={handleClose} onExited={() => dispatch(mapActions.unselectMarker())} fullscreen="sm-down" contentClassName="form-modal-content" scrollable>
 			
 				<Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
@@ -72,6 +72,10 @@ const NewHomePage = ({ handleClick }) => {
           </div>
 
           <div className="mainPage_Section col-10">
+          <Row>
+            <Col>Heyyyyy I'm a DIVVVV</Col>
+            <Col><Map className="col-4" receivers={recivers} providers={providers} setShow={setShow} /></Col>
+          </Row>
             {loading ? (
               <div
                 className="d-flex justify-content-center align-items-center"

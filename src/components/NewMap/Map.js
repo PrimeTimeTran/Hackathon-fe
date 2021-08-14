@@ -71,7 +71,7 @@ const Map = ({ receivers, providers, setShow }) => {
 	}
 	return (
 		<LoadScript googleMapsApiKey={REACT_APP_GOOGLE_API}>
-			<GoogleMap mapContainerStyle={containerStyle} center={geocode} zoom={16}>
+			<GoogleMap mapContainerStyle={containerStyle} center={geocode} zoom={13}>
 				<Marker onLoad={onLoad} position={{ ...geocode }} />
 				<MarkerClusterer gridSize={150} options={options} averageCenter={true}>
 					{(clusterer) => 
