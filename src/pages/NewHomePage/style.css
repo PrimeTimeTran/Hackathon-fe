@@ -16,3 +16,13 @@
 .nav-tabs {
   border-bottom: 3px solid pink !important;
 }
+
+.sideBar {
+  position: sticky;
+  top: 50px;
+}
+
+.top-Bar {
+  margin: auto;
+  position: unset;
+}
