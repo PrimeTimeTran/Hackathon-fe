@@ -9,8 +9,6 @@ import "./style.css";
 import ProviderPetition from "../../components/ProviderPetition/ProviderPettion";
 import PaginationBar from "../../components/PaginationBar/PaginationBar";
 import NewSideBar from "../../components/NewSideBar/NewSideBar";
-import NewFooter from "../../components/NewFooter/NewFooter";
-import Footer from "../../components/Footer/Footer";
 
 const NewHomePage = ({ handleClick }) => {
   const [pageNum, setPageNum] = useState(1);
@@ -108,8 +106,6 @@ const NewHomePage = ({ handleClick }) => {
             loading={loading}
           />
         </Row>
-        <NewFooter />
-        <Footer />
       </Container>
     </>
   );
