@@ -1,5 +1,5 @@
 import React from "react";
-import ReceiverBankAccount from "../../components/ReceiverBankAccount/ReceiverBankAccount";
+import ReceiverBankAccount from "../../components/ReceiverBankAccount/ReceiverBAnkAccount";
 import ToastSoS from "../../components/Toast/Toast";
 
 function BankTransfer() {
