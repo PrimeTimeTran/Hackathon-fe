@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Modal, Row, Tab, Tabs } from "react-bootstrap";
+import { Col, Container, Row, Tab, Tabs, Modal, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import ReciverPettion from "../../components/ReciverPettion/ReciverPettion";
 import { useHistory } from "react-router-dom";
 import { petitionActions } from "../../redux/actions/petition.actions";
+import { formActions } from "../../redux/actions/form.actions";
 import { ClipLoader } from "react-spinners";
 import "./style.css";
 import ProviderPetition from "../../components/ProviderPetition/ProviderPettion";
@@ -15,17 +16,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const NewHomePage = ({ handleClick }) => {
   const [pageNum, setPageNum] = useState(1);
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => {
+    setShow(false);
+    dispatch(formActions.changePage("index"));
+  };
+
+  const handleShow = () => setShow(true);
+
   const loading = useSelector((state) => state.petition.loading);
   const recivers = useSelector((state) => state.petition.recivers);
   const providers = useSelector((state) => state.petition.providers);
   const totalPageNum = useSelector((state) => state.petition.totalPageNum);
   const dispatch = useDispatch();
   const history = useHistory();
-  const [show, setShow] = useState(false);
   const [modalShow, setModalShow] = useState(true);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   useEffect(() => {
     dispatch(petitionActions.receiverRequest(pageNum, 9));
     dispatch(petitionActions.providerRequest(pageNum, 9));
@@ -112,8 +119,6 @@ const NewHomePage = ({ handleClick }) => {
             loading={loading}
           />
         </Row>
-        <NewFooter />
-        <Footer />
         <Modal
           dialogClassName="model-dialog"
           contentClassName="model-content"

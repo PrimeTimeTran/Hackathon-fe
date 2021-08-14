@@ -11,6 +11,8 @@
 }
 
 .cardTitleTex {
+  background-color: none !important;
+  border-bottom: none;
   text-align: center;
   /* color: red; */
 }
@@ -21,14 +23,14 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  height: 30vh;
+  height: 20vh;
   top: 30%;
 }
-@media only screen and (min-width: 600px) {
-  .cardSideBar {
-    height: 70vh;
-  }
+
+.cardSideBar {
+  box-shadow: 2px 3px 7px #888888;
 }
+
 .cardBotton button {
   background-color: #ff4c68;
   padding-top: 5px;

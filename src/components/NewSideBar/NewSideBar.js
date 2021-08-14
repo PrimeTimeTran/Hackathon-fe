@@ -38,7 +38,7 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
           <Card className="cardSideBar">
             <Card.Header className="cardTitleTex">
               {" "}
-              <strong>You would like to... </strong>
+              <strong>You'd like to </strong>
             </Card.Header>
             <Card.Body>
               <div className="cardBotton">
