@@ -1,6 +1,13 @@
 .Cl-SideBar {
   /* padding-top: 20px; */
   border-radius: 5px;
+  position: sticky;
+  top: 5rem;
+  left: 3rem;
+}
+
+.topBar {
+  position: none !important;
 }
 
 .cardTitleTex {
