@@ -8,6 +8,7 @@ import FundingPage from "./pages/FundingPage";
 import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundRequestDetailPage";
 // import Navbar from "./components/Navbar";
 import NewHomePage from "./pages/NewHomePage/NewHomePage";
+import NewFooter from "./components/NewFooter/NewFooter";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           component={FundRequestDetailPage}
         />
       </Switch>
+      <NewFooter />
     </div>
   );
 }
