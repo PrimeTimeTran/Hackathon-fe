@@ -8,6 +8,8 @@ import AboutPage from "./pages/AboutPage/AboutPage";
 import FundingPage from "./pages/FundingPage";
 import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundRequestDetailPage";
 import NewHomePage from "./pages/NewHomePage/NewHomePage";
+import SignUpPage from "./pages/SignUp/SignUpPage";
+import LogInPage from "./pages/LogInPage/LogInPage";
 
 import NewFooter from "./components/NewFooter/NewFooter";
 
@@ -28,6 +30,8 @@ function App() {
             exact
             component={FundRequestDetailPage}
           />
+          <Route path="/signup" exact component={SignUpPage} />
+          <Route path="/login" exact component={LogInPage} />
         </Switch>
         <NewFooter />
       </Router>
