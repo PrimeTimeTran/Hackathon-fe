@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import i18n from "i18next";
+
 import "./styles.css";
 
 import logo from "./logo.png";
 
 const Header = () => {
+  const { t } = useTranslation();
+
+  const [language, setLanguage] = useState("en");
+
+  const handleChangeLanguage = (e) => {
+    e.preventDefault();
+    setLanguage(e.target.value);
+    i18n.changeLanguage(e.target.value);
+  };
+
+  const languages = ["vi", "en"];
+
   return (
     <>
       <Navbar
@@ -14,6 +29,14 @@ const Header = () => {
         expand="lg"
         sticky="top"
       >
+        {languages.map((l) => {
+          return (
+            <button onClick={handleChangeLanguage} value={l}>
+              {l}
+            </button>
+          );
+        })}
+        {language}
         <Container>
           <Link
             as={Link}
@@ -36,16 +59,16 @@ const Header = () => {
               style={{ display: "flex", justifyContent: "space-between" }}
             >
               <Nav.Link as={Link} to="/funding">
-                Quyên góp
+                {t("funding")}
               </Nav.Link>
               <Nav.Link as={Link} to="/about">
-                Về chúng tôi
+                {t("about")}
               </Nav.Link>
               <Nav.Link as={Link} to="/stories">
-                Câu chuyện
+                {t("stories")}
               </Nav.Link>
               <Nav.Link as={Link} to="/map">
-                Bản đồ
+                {t("map")}
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
