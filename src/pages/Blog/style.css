@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+
+.blog-banner {
+	background-image: url('https://images.pexels.com/photos/160994/family-outdoor-happy-happiness-160994.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+	background-size: cover;
+	background-position: center bottom;
+	background-attachment: fixed;
+	top: 50px;
+	background-repeat: no-repeat;
+	height: 400px;
+}
+
+.blog-banner-wrapper {
+	height: 100%;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.blog-banner-text {
+	font-size: 40px;
+	font-weight: 700;
+	letter-spacing: 5px;
+	word-spacing: 5px;
+}
+
+.blog-banner-subtext {
+	font-size: 25px;
+	letter-spacing: 3px;
+	word-spacing: 4px;
+}
+
+.blog-page {
+	background-color: rgb(255, 240, 227);
+	flex-grow: 1;
+}
+
+.blog-banner-divider {
+	width: 40px;
+	margin: 10px;
+	border-bottom: 1px solid white;
+}
+
+.blog-card {
+	background-color: #fff;
+	max-width: 1100px;
+	margin: 10px 0;
+}
+
+.blog-card-text {
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+}
+.blog-card-photo {
+	overflow: hidden;
+}
+
+.blog-card-photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition-duration: 0.5s;
+}
+
+.blog-card-photo:hover img {
+	transform: scale(1.2);
+	transition-duration: 0.5s;
+	opacity: 0.5;
+}
+
+.blog-card-title-wrapper {
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+}
+.blog-card-title {
+	position: relative;
+	color: rgb(35, 145, 160);
+	text-transform: uppercase;
+	font-size: 24px;
+	font-weight: 700;
+}
+.blog-card-title::before {
+	content: '';
+	border-top: 2px solid rgb(204, 80, 80);
+	position: absolute;
+	height: 1px;
+	right: 100%;
+	margin-right: 10px;
+	top: 50%;
+	width: 500px;
+}
+
+.blog-card-title::after {
+	content: '';
+	position: absolute;
+	border-top: 2px solid rgb(204, 80, 80);
+	width: 500px;
+	height: 1px;
+	top: 50%;
+	left: 100%;
+	margin-left: 10px;
+}
+
+.blog-card-credit {
+	color: gray;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.blog-card-content {
+	margin: 20px 0;
+}
+.blog-card-read-more a {
+	text-align: center;
+	width: 100%;
+	text-decoration: none;
+	color: teal;
+}
+
+.blog-card-read-more span {
+	border: 1px solid rgba(0, 128, 128, 0.397);
+	padding: 10px;
+	transition-duration: 0.5s;
+}
+
+.blog-card-read-more span:hover {
+	transition-duration: 0.5s;
+	color: teal;
+}
+
+@media screen and (max-width: 576px) {
+	.blog-banner-text {
+		font-size: 20px;
+	}
+
+	.blog-banner-subtext {
+		font-size: 15px;
+	}
+}
