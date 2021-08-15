@@ -5,7 +5,7 @@ import './style.css';
 import { useDispatch } from 'react-redux';
 import { mapActions } from '../../redux/actions/map.actions';
 
-const Map = ({ receivers, providers, setShow }) => {
+const Map = ({ receivers, providers, setMarkerShow }) => {
 	console.log(receivers)
 	const dispatch = useDispatch();
 	const [geocode, setGeocode] = useState({
@@ -55,11 +55,14 @@ const Map = ({ receivers, providers, setShow }) => {
 	//   }
 	// );
 	const users = receivers.newPetitions?.concat(providers.newPetitions)
+
+	console.log('rêciieiee',receivers)
+
 	console.log(users)
 
 	const showUserModal = (user) => {
 		dispatch(mapActions.selectMarker(user));
-		setShow(true);
+		setMarkerShow(true);
 	};
 
 	const options = {

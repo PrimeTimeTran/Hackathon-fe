@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 const MarkerPopup = ({ handleClose }) => {
 	const dispatch = useDispatch();
 	const marker = useSelector((state) => state.map.selectedMarker);
+	
 	// const form = useSelector((state) => state.map.form);
 	// useEffect(() => {
 	// 	dispatch(mapActions.getSingleForm(_id));
