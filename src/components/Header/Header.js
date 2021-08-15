@@ -33,11 +33,10 @@ const Header = () => {
         expand="lg"
         sticky="top"
       >
-        <Link
-          style={{ textDecoration: "none" }}
+        <Nav.Link
+          style={{ textDecoration: "none", flexBasis: "32%" }}
           as={Link}
           to={`/`}
-          style={{ flexBasis: "32%" }}
         >
           <img
             src={logo}
@@ -46,8 +45,8 @@ const Header = () => {
             height="32"
             className="d-inline-block align-top"
           />
-          <Navbar.Brand>SOS Map</Navbar.Brand>
-        </Link>
+          SOS Map
+        </Nav.Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="navHam" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav
