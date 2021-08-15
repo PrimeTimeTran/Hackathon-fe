@@ -4,9 +4,10 @@ import { formActions } from "../../redux/actions/form.actions";
 
 const MatchingForm = () => {
   const matchingForm = useSelector((state) => state.form.matchingForm);
+  const user = useSelector((state) => state.form.user);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(formActions.matchingForm({ id: "61174577722b8418e85bf890" }));
+    dispatch(formActions.matchingForm(user));
   }, []);
   // console.log(matchingForm);
 

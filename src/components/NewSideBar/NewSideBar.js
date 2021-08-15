@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Card, Col, Modal, Row } from "react-bootstrap";
+import { Button, Card, Col, Modal, Row, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { formActions } from "../../redux/actions/form.actions";
 import MainForm from "../Form/MainForm";
@@ -7,12 +7,17 @@ import "./NewSideBar.css";
 
 const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
   const [show, setShow] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [form, setForm] = useState({ phone: "", firstName: "" });
   const dispatch = useDispatch();
 
   const [showDonate, setShowDonate] = useState(false);
   const [receive, setReceive] = useState(false);
   const handleDonateClose = () => {
     setShowDonate(false);
+  };
+  const handleFormClose = () => {
+    setShowForm(false);
     dispatch(formActions.changePage("index"));
   };
   const handleClose = () => {
@@ -46,6 +51,15 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
     }
     setReceive(true);
   };
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem("user", JSON.stringify(form));
+    dispatch(formActions.submitPhone(form));
+  };
+  const handleOnChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  console.log(showDonate, showForm);
   return (
     <>
       {modalShow ? (
@@ -113,6 +127,7 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
           </Button>
         </Modal.Footer>
       </Modal>
+      {/* Phone number modal */}
       <Modal
         show={showDonate}
         onHide={handleDonateClose}
@@ -121,9 +136,51 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
         scrollable
       >
         <Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
-          <MainForm handleClose={handleDonateClose} />
+          <Form onSubmit={handelSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Tên của bạn</Form.Label>
+              <Form.Control
+                name="firstName"
+                type="text"
+                placeholder="Ví dụ: Nghi"
+                onChange={handleOnChange}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Số điện thoại</Form.Label>
+              <Form.Control
+                name="phone"
+                type="text"
+                placeholder="Ví dụ: 09870xxxxx"
+                onChange={handleOnChange}
+              />
+            </Form.Group>
+
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={() => {
+                setShowDonate(false);
+                setShowForm(true);
+              }}
+            >
+              Tiếp tục
+            </Button>
+          </Form>
         </Modal.Body>
-        {/* <Modal.Footer></Modal.Footer> */}
+      </Modal>
+      {/* Mainform */}
+      <Modal
+        show={showForm}
+        onHide={handleFormClose}
+        fullscreen="sm-down"
+        contentClassName="form-modal-content"
+        scrollable
+      >
+        <Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
+          <MainForm handleClose={handleFormClose} />
+        </Modal.Body>
       </Modal>
     </>
   );
