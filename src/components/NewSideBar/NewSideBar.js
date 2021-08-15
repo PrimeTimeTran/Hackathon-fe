@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Button, Card, Col, Modal, Row, Form } from "react-bootstrap";
+import { Button, Card, Col, Modal, Form } from "react-bootstrap";
 
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
