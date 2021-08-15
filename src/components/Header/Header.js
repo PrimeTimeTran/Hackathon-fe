@@ -1,30 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./styles.css";
-import { Button } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
-// import RequestForm from "../RequestFrom";
 
 import logo from "./logo.png";
 
 const Header = () => {
-  const [open, setOpen] = useState(false);
-
-  const history = useHistory();
-
-  const HandleClickOpen = () => {
-    console.log(typeof localStorage.getItem("isLoggedIn"));
-    if (localStorage.getItem("isLoggedIn") === "true") {
-      console.log("if");
-      setOpen(true);
-    } else {
-      console.log("else");
-      alert("Please log in to use this function.");
-      history.push("/login");
-    }
-  };
-
   return (
     <>
       <Navbar
@@ -35,10 +16,9 @@ const Header = () => {
       >
         <Container>
           <Link
-            style={{ textDecoration: "none" }}
             as={Link}
             to={`/`}
-            style={{ flexBasis: "32%" }}
+            style={{ textDecoration: "none", flexBasis: "32%" }}
           >
             <img
               src={logo}
@@ -68,22 +48,9 @@ const Header = () => {
                 Bản đồ
               </Nav.Link>
             </Nav>
-            {/* <div className=" justify-content-md-center">
-            <Nav className="mr-auto justify-content-end">
-              <Button
-                variant="outlined"
-                color="danger"
-                onClick={HandleClickOpen}
-              >
-                Make a request
-              </Button>
-            </Nav>
-          </div> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
-      {/* <RequestForm open={open} setOpen={setOpen} /> */}
     </>
   );
 };

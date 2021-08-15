@@ -7,7 +7,6 @@ import Header from "./components/Header/Header";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import FundingPage from "./pages/FundingPage";
 import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundRequestDetailPage";
-import Navbar from "./components/Navbar";
 // import FunDetailRequestInfo from "./components/FunDetailRequestInfo/FunDetailRequestInfo";
 import NewHomePage from "./pages/NewHomePage/NewHomePage";
 

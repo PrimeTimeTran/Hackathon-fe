@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import * as types from '../constants/map.constants';
 import api from '../apiService';
-import { toast } from 'react-toastify';
 
 const selectMarker = (item) => async (dispatch) => {
 	dispatch({ type: types.SELECT_MARKER, payload: item });
