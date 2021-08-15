@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Tab, Tabs, Modal, Button } from "react-bootstrap";
+import { Col, Container, Row, Tab, Tabs, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import ReciverPettion from "../../components/ReciverPettion/ReciverPettion";
 import { useHistory } from "react-router-dom";
 import { formActions } from "../../redux/actions/form.actions";
 import { mapActions } from "../../redux/actions/map.actions";
-import { ClipLoader } from "react-spinners/ClipLoader";
 import "./style.css";
 import ProviderPetition from "../../components/ProviderPetition/ProviderPettion";
 import PaginationBar from "../../components/PaginationBar/PaginationBar";
 import NewSideBar from "../../components/NewSideBar/NewSideBar";
-import MainForm from "../../components/Form/MainForm";
-// import Login from '../../components/Login/Login';
 import MarkerPopup from "../../components/NewMap/MarkerPopup";
 import Map from "../../components/NewMap/Map";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { petitionActions } from "../../redux/actions/petition.actions";
 import "./style.css";
@@ -39,8 +35,6 @@ const NewHomePage = ({ handleClick }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [modalShow, setModalShow] = useState(true);
-
-  console.log(recivers);
 
   useEffect(() => {
     dispatch(petitionActions.receiverRequest(pageNum, 9));
@@ -107,14 +101,6 @@ const NewHomePage = ({ handleClick }) => {
                 </Modal>
               </Col>
             </Row>
-            {/* {loading ? (
-              <div
-                className="d-flex justify-content-center align-items-center"
-                style={{ minHeight: "100vh" }}
-              >
-                <ClipLoader color="#f86c6b" size={150} loading={true} />
-              </div>
-            ) : ( */}
             <div>
               <Tabs
                 defaultActiveKey="recivers"
@@ -128,7 +114,6 @@ const NewHomePage = ({ handleClick }) => {
                 >
                   {recivers.newPetitions?.length ? (
                     recivers.newPetitions.map((reciver) => {
-                      console.log(reciver);
                       return (
                         <ReciverPettion
                           reciver={reciver}
@@ -164,23 +149,23 @@ const NewHomePage = ({ handleClick }) => {
           </div>
           <PaginationBar
             pageNum={pageNum}
+            loading={loading}
             setPageNum={setPageNum}
             totalPageNum={totalPageNum}
-            loading={loading}
           />
         </Row>
         <Modal
-          dialogClassName="model-dialog"
-          contentClassName="model-content"
-          className="popup-modal"
           show={show}
           onHide={handleClose}
+          className="popup-modal"
+          dialogClassName="model-dialog"
+          contentClassName="model-content"
         >
           <Modal.Header closeButton></Modal.Header>
           <NewSideBar
             setModalShow={setShow}
-            setAskShow={setModalShow}
             modalShow={modalShow}
+            setAskShow={setModalShow}
           />
         </Modal>
       </Container>

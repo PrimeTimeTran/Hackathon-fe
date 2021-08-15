@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+
 import { Button, Card, Col, Modal, Row, Form } from "react-bootstrap";
+
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
+
 import { formActions } from "../../redux/actions/form.actions";
 import MainForm from "../Form/MainForm";
 import "./NewSideBar.css";
@@ -51,6 +55,7 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
     }
     setReceive(true);
   };
+
   const handelSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("user", JSON.stringify(form));
@@ -60,6 +65,12 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   console.log(showDonate, showForm);
+
+
+  const { t } = useTranslation();
+
+
+
   return (
     <>
       {modalShow ? (
@@ -67,12 +78,12 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
           <Card className="cardSideBar">
             <Card.Header className="cardTitleTex">
               {" "}
-              <strong>Bạn muốn </strong>
+              <strong>{t("want")}</strong>
             </Card.Header>
             <Card.Body>
               <div className="cardBotton">
                 <Button variant="light" className="btn" onClick={handleShow}>
-                  Cho
+                  {t("give")}
                 </Button>
                 <br />
                 <Button
@@ -80,7 +91,7 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
                   className="btn"
                   onClick={handleShowReceive}
                 >
-                  Nhận
+                  {t("receive")}
                 </Button>
               </div>
             </Card.Body>
@@ -93,37 +104,38 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
       {/* modals donate */}
       <Modal className="popup-modal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title className="modalsTitle">Bạn muốn cho</Modal.Title>
+          <Modal.Title className="modalsTitle">{t("want_to_give")}</Modal.Title>
         </Modal.Header>
         <Modal.Footer className="modalsFooter">
           <Button variant="light" className="buttonModal">
-            Tiền
+            {t("money")}
           </Button>
           <Button
             onClick={handleShowDonate}
             variant="light"
             className="buttonModal"
           >
-            Thức ăn
+            {t("food")}
           </Button>
         </Modal.Footer>
       </Modal>
-
-      {/* modals receive */}
       <Modal className="popup-modal" show={receive} onHide={handleCloseReceive}>
         <Modal.Header closeButton>
-          <Modal.Title className="modalsTitle">Bạn muốn nhận</Modal.Title>
+          <Modal.Title className="modalsTitle"></Modal.Title>
+          <Modal.Title className="modalsTitle">
+            {t("want_to_receive")}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Footer className="modalsFooter">
           <Button variant="light" className="buttonModal">
-            Tiền
+            {t("money")}
           </Button>
           <Button
             onClick={handleShowDonate}
             variant="light"
             className="buttonModal"
           >
-            Thức ăn
+            {t("food")}
           </Button>
         </Modal.Footer>
       </Modal>

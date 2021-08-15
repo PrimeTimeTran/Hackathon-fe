@@ -7,8 +7,10 @@ const MatchingForm = () => {
   const user = useSelector((state) => state.form.user);
   const dispatch = useDispatch();
   useEffect(() => {
+
     dispatch(formActions.matchingForm(user));
   }, []);
+
   // console.log(matchingForm);
 
   return (

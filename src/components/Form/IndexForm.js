@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function IndexForm() {
+
   const dispatch = useDispatch();
   const { menu } = useSelector((state) => state.form);
   const selectedItems = useSelector((state) => state.form.items);
@@ -49,6 +50,7 @@ function IndexForm() {
       })}
     </>
   );
+
 }
 
 export default IndexForm;

@@ -70,9 +70,10 @@ function HomePage() {
 
   useEffect(() => {
     const fetchPetitions = async () => {
-      const resp = await fetch(url + "/petitions");
+      const resp = await fetch(url + "/api/petitions");
       const json = await resp.json();
-      let newPetitions = json.data.petitions;
+      console.log({ json });
+      let newPetitions = json.data.newPetitions;
 
       setAllPetitions(newPetitions);
       setPetitions(newPetitions);
