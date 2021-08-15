@@ -10,6 +10,9 @@ import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundReques
 import FundDonationBankTransfer from "../src/pages/FundDonationBankTransfer/FundDonationBankTransfer";
 import FundRequestPage from "./pages/FundRequestPage/FundRequestPage";
 import NewHomePage from "./pages/NewHomePage/NewHomePage";
+import SignUpPage from "./pages/SignUp/SignUpPage";
+import LogInPage from "./pages/LogInPage/LogInPage";
+
 import NewFooter from "./components/NewFooter/NewFooter";
 
 function App() {
@@ -30,6 +33,8 @@ function App() {
             component={FundDonationBankTransfer}
           />
           <Route path='/funding/request' exact component={FundRequestPage} />
+          <Route path='/signup' exact component={SignUpPage} />
+          <Route path='/login' exact component={LogInPage} />
         </Switch>
         <NewFooter />
       </Router>
