@@ -15,6 +15,8 @@ import MainForm from "../../components/Form/MainForm";
 // import Login from '../../components/Login/Login';
 import MarkerPopup from '../../components/NewMap/MarkerPopup';
 import Map from "../../components/NewMap/Map";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const NewHomePage = ({ handleClick }) => {
   const [pageNum, setPageNum] = useState(1);
@@ -34,6 +36,7 @@ const NewHomePage = ({ handleClick }) => {
   const marker = useSelector((state) => state.map.selectedMarker);
   const dispatch = useDispatch();
   const history = useHistory();
+  const [modalShow, setModalShow] = useState(true);
 
 
   console.log(recivers)
@@ -47,18 +50,19 @@ const NewHomePage = ({ handleClick }) => {
     history.push(`/petitions/${id}`);
   };
 
-  const handleClickOnProvider = () => {};
+  const handleClickOnProvider = () => { };
   return (
     <>
       <Container className="mt-5">
-        <div className="sideBar col-4 d-lg-none top-Bar ">
-          {" "}
-          <NewSideBar topBar={"topBar"} />
+        <div className="col-4 d-lg-none addButton-wrap">
+          <button class="addButton" onClick={handleShow}>
+            +
+          </button>
         </div>
-        <Row>
+        <Row className="d-flex justify-content-center">
           <div className="sideBar col-2 d-none d-lg-block ">
             {" "}
-            <NewSideBar />
+            <NewSideBar modalShow={modalShow} />
           </div>
 
           <div className="mainPage_Section col-10">
@@ -83,50 +87,48 @@ const NewHomePage = ({ handleClick }) => {
               </div>
             ) : (
               <div>
-                <Container>
-                  <Tabs
-                    defaultActiveKey="recivers"
-                    id="uncontrolled-tab-example"
-                    className="mb-3 "
+                <Tabs
+                  defaultActiveKey="recivers"
+                  id="uncontrolled-tab-example"
+                  className="mb-3 d-flex justify-content-center"
+                >
+                  <Tab
+                    eventKey="recivers"
+                    title="Receivers"
+                    className="tab-title"
                   >
-                    <Tab
-                      eventKey="recivers"
-                      title="Recivers"
-                      className="tab-title"
-                    >
-                      {recivers.newPetitions?.length ? (
-                        <>
-                          {recivers.newPetitions.map((reciver) => (
-                            <ReciverPettion
-                              reciver={reciver}
-                              handleClick={handleClickOnReciver}
-                              key={reciver._id}
-                              className="tab-container"
-                            />
-                          ))}
-                        </>
-                      ) : (
-                        <p>There are no Reciver</p>
-                      )}
-                    </Tab>
-                    <Tab eventKey="providers" title="Providers">
-                      {providers.newPetitions?.length ? (
-                        <>
-                          {providers.newPetitions.map((provider) => (
-                            <ProviderPetition
-                              provider={provider}
-                              handleClick={handleClickOnProvider}
-                              key={provider._id}
-                              className="tab-container"
-                            />
-                          ))}
-                        </>
-                      ) : (
-                        <p>There are no Reciver</p>
-                      )}
-                    </Tab>
-                  </Tabs>
-                </Container>
+                    {recivers.newPetitions?.length ? (
+                      <>
+                        {recivers.newPetitions.map((reciver) => (
+                          <ReciverPettion
+                            reciver={reciver}
+                            handleClick={handleClickOnReciver}
+                            key={reciver._id}
+                            className="tab-container"
+                          />
+                        ))}
+                      </>
+                    ) : (
+                      <p>There are no Reciver</p>
+                    )}
+                  </Tab>
+                  <Tab eventKey="providers" title="Providers">
+                    {providers.newPetitions?.length ? (
+                      <>
+                        {providers.newPetitions.map((provider) => (
+                          <ProviderPetition
+                            provider={provider}
+                            handleClick={handleClickOnProvider}
+                            key={provider._id}
+                            className="tab-container"
+                          />
+                        ))}
+                      </>
+                    ) : (
+                      <p>There are no Reciver</p>
+                    )}
+                  </Tab>
+                </Tabs>
               </div>
             )}
           </div>
@@ -137,17 +139,25 @@ const NewHomePage = ({ handleClick }) => {
             loading={loading}
           />
         </Row>
-
         <Modal
+          dialogClassName="model-dialog"
+          contentClassName="model-content"
+          className="popup-modal"
           show={show}
           onHide={handleClose}
-          fullscreen="sm-down"
-          contentClassName="form-modal-content"
-          scrollable
         >
+          <Modal.Header closeButton></Modal.Header>
+          <NewSideBar
+            setModalShow={setShow}
+            setAskShow={setModalShow}
+            modalShow={modalShow}
+          />
+        </Modal>
+        <Modal show={show} onHide={handleClose} fullscreen="sm-down" contentClassName="form-modal-content" scrollable>
           <Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
             {<MainForm handleClose={handleClose} />}
           </Modal.Body>
+          {/* <Modal.Footer></Modal.Footer> */}
         </Modal>
         <div className="join-button">
           <Button variant="dark" size="lg" onClick={handleShow}>

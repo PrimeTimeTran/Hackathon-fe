@@ -27,7 +27,6 @@ const Header = () => {
 
   return (
     <>
-    
       <Navbar
         className="nav-bar justify-content-md-space-between justify-content-sm-space-around navpar"
         variant="light"
