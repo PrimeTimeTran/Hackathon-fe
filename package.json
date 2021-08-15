@@ -32,12 +32,9 @@
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-<<<<<<< HEAD
+    "react-share": "^4.4.0",
     "react-spinners": "^0.11.0",
     "react-toastify": "^7.0.4",
-=======
-    "react-share": "^4.4.0",
->>>>>>> 58eca10b7880af79e931adc7cba1fc5dce0d1402
     "redux-devtools-extension": "^2.13.9",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",

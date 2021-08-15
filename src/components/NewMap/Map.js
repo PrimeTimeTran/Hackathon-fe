@@ -58,7 +58,7 @@ const Map = ({ receivers, providers, setShow }) => {
 	console.log(users)
 
 	const showUserModal = (user) => {
-		// dispatch(mapActions.selectMarker(user));
+		dispatch(mapActions.selectMarker(user));
 		setShow(true);
 	};
 
@@ -75,7 +75,7 @@ const Map = ({ receivers, providers, setShow }) => {
 				<Marker onLoad={onLoad} position={{ ...geocode }} />
 
 
-				
+
 				<MarkerClusterer gridSize={150} options={options} averageCenter={true}>
 					{(clusterer) => 
 						

@@ -5,24 +5,16 @@ import ReciverPettion from "../../components/ReciverPettion/ReciverPettion";
 import { useHistory } from "react-router-dom";
 import { petitionActions } from "../../redux/actions/petition.actions";
 import { formActions } from "../../redux/actions/form.actions";
-import { ClipLoader } from "react-spinners";
+import { mapActions } from '../../redux/actions/map.actions'
+import { ClipLoader } from "react-spinners/ClipLoader";
 import "./style.css";
 import ProviderPetition from "../../components/ProviderPetition/ProviderPettion";
 import PaginationBar from "../../components/PaginationBar/PaginationBar";
 import NewSideBar from "../../components/NewSideBar/NewSideBar";
-<<<<<<< HEAD
-import Map from "../../components/NewMap/Map";
-import MarkerPopup from "../../components/NewMap/MarkerPopup";
-
-
-import NewFooter from "../../components/NewFooter/NewFooter";
-import Footer from "../../components/Footer/Footer";
-
-import MainForm from "../../components/Form/MainForm"
-=======
->>>>>>> f7bcfd9397b1b071b5b6fa2d4cd207b13b7eb7ce
-
 import MainForm from "../../components/Form/MainForm";
+// import Login from '../../components/Login/Login';
+import MarkerPopup from '../../components/NewMap/MarkerPopup';
+import Map from "../../components/NewMap/Map";
 
 const NewHomePage = ({ handleClick }) => {
   const [pageNum, setPageNum] = useState(1);
@@ -34,11 +26,12 @@ const NewHomePage = ({ handleClick }) => {
   };
 
   const handleShow = () => setShow(true);
-
+  
   const loading = useSelector((state) => state.petition.loading);
   const recivers = useSelector((state) => state.petition.recivers);
   const providers = useSelector((state) => state.petition.providers);
   const totalPageNum = useSelector((state) => state.petition.totalPageNum);
+  const marker = useSelector((state) => state.map.selectedMarker);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -57,13 +50,6 @@ const NewHomePage = ({ handleClick }) => {
   const handleClickOnProvider = () => {};
   return (
     <>
-      
-      {/* <Modal show={show} onHide={handleClose} onExited={() => dispatch(mapActions.unselectMarker())} fullscreen="sm-down" contentClassName="form-modal-content" scrollable>
-			
-				<Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
-					{marker.name ? <MarkerPopup handleClose={handleClose} /> : user?.name ? <MainForm handleClose={handleClose} /> : <Login handleClose={handleClose} />}
-				</Modal.Body>
-			</Modal> */}
       <Container className="mt-5">
         <div className="sideBar col-4 d-lg-none top-Bar ">
           {" "}
@@ -78,7 +64,15 @@ const NewHomePage = ({ handleClick }) => {
           <div className="mainPage_Section col-10">
           <Row>
             <Col>Heyyyyy I'm a DIVVVV</Col>
-            <Col><Map className="col-4" receivers={recivers} providers={providers} setShow={setShow} /></Col>
+            <Col>
+              <Map className="col-4" receivers={recivers} providers={providers} setShow={setShow} />
+              <Modal show={show} onHide={handleClose} onExited={() => dispatch(mapActions.unselectMarker())} fullscreen="sm-down" contentClassName="form-modal-content" scrollable>
+            
+                <Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
+                  {marker.owner ? <MarkerPopup handleClose={handleClose} /> : <></>}
+                </Modal.Body>
+              </Modal>
+            </Col>
           </Row>
             {loading ? (
               <div
