@@ -64,8 +64,6 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
   const handleOnChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-  console.log(showDonate, showForm);
-
 
   const { t } = useTranslation();
 
@@ -138,7 +136,6 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-      {/* Phone number modal */}
       <Modal
         show={showDonate}
         onHide={handleDonateClose}
@@ -149,7 +146,7 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
         <Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
           <Form onSubmit={handelSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Tên của bạn</Form.Label>
+              <Form.Label>{t("your_name")}</Form.Label>
               <Form.Control
                 name="firstName"
                 type="text"
@@ -159,7 +156,7 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Số điện thoại</Form.Label>
+              <Form.Label>{t("phone_number")}</Form.Label>
               <Form.Control
                 name="phone"
                 type="text"
@@ -176,7 +173,7 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
                 setShowForm(true);
               }}
             >
-              Tiếp tục
+              {t("next")}
             </Button>
           </Form>
         </Modal.Body>

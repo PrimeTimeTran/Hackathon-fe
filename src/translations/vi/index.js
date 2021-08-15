@@ -18,4 +18,7 @@ export const TRANSLATIONS_VI = {
   money: "Tiền",
   want_to_receive: "Bạn muốn nhận",
   want_to_give: "Bạn muốn cho",
+  your_name: "Tên của bạn",
+  phone_number: "Số điện thoại",
+  next: "Tiếp tục",
 };

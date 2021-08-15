@@ -17,5 +17,8 @@ export const TRANSLATIONS_EN = {
   food: "Food",
   money: "Money",
   want_to_receive: "You want to receive",
-  want_to_give: "You want to give"
+  want_to_give: "You want to give",
+  your_name: "Your Name",
+  phone_number: "Phone Number",
+  next: "Next"
 };
