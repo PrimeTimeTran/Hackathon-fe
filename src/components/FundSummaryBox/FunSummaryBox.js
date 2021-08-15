@@ -23,7 +23,10 @@ function FunSummaryBox() {
         <div className=" padding2vh ">
           <br></br>
           <center>
-            <button type="button" className=" btn btn-pink btn-lg btn-block">
+            <button
+              type="button"
+              className=" btn btn-pink btn-lg btn-block col-lg-12"
+            >
               Support
             </button>
           </center>

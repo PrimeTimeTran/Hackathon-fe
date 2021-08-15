@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./styles.css";
 import { Button } from "@material-ui/core";
@@ -27,14 +27,14 @@ const Header = () => {
 
   return (
     <>
-    
       <Navbar
         className="nav-bar justify-content-md-space-between justify-content-sm-space-around navpar"
         variant="light"
         expand="lg"
         sticky="top"
       >
-        <Link style={{ textDecoration: "none" }} as={Link} to={`/`}
+       <Container >
+       <Link style={{ textDecoration: "none" }} as={Link} to={`/`}
         style={{ flexBasis:'32%'}}>
         <img
               src={logo}
@@ -69,6 +69,7 @@ const Header = () => {
             </Nav>
           </div> */}
         </Navbar.Collapse>
+       </Container>
       </Navbar>
 
       {/* <RequestForm open={open} setOpen={setOpen} /> */}
