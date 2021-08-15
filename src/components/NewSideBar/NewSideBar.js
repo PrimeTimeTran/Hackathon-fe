@@ -98,7 +98,7 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
       {/* modals receive */}
       <Modal className="popup-modal" show={receive} onHide={handleCloseReceive}>
         <Modal.Header closeButton>
-          <Modal.Title className="modalsTitle">Want To Receive</Modal.Title>
+          <Modal.Title className="modalsTitle">Bạn muốn nhận</Modal.Title>
         </Modal.Header>
         <Modal.Footer className="modalsFooter">
           <Button variant="light" className="buttonModal">
