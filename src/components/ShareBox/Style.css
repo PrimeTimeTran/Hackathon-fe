@@ -1,0 +1,22 @@
+.btn-pink {
+  background-color: #ff4c68;
+  color: white;
+}
+.outline-sharing {
+  border: 2px solid #ff4c68 !important;
+  background-color: white;
+  color: #ff4c68;
+  height: 8vh;
+}
+.grey-box {
+  background-color: rgb(243, 240, 240);
+  border-radius: 5%;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+.display-flex {
+  display: flex;
+  justify-content: space-around;
+}
