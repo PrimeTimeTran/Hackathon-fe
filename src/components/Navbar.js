@@ -10,12 +10,13 @@ export default function Navbarr() {
     <div>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">{t("codevid_relief")}</Navbar.Brand>
+          <Navbar.Brand href="/">{t("codevid_relief")}</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">{t("activity")}</Nav.Link>
-              <Nav.Link href="#link">{t("requests")}</Nav.Link>
+              <Nav.Link href="/map">{t("map")}</Nav.Link>
+              <Nav.Link href="/">{t("activity")}</Nav.Link>
+              <Nav.Link href="/donations">{t("requests")}</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

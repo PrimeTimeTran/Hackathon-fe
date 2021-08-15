@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./styles.css";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-import RequestForm from "../RequestFrom";
+// import RequestForm from "../RequestFrom";
 
 import logo from "./logo.png";
 
@@ -28,12 +28,18 @@ const Header = () => {
   return (
     <>
       <Navbar
-        className="nav-bar justify-content-md-center "
-        variant="dark"
+        className="nav-bar justify-content-md-space-between justify-content-sm-space-around navpar"
+        variant="light"
         expand="lg"
+        sticky="top"
       >
-        <Link style={{ textDecoration: "none" }} as={Link} to={`/`}>
-          <Navbar.Brand>
+        <Container>
+          <Link
+            style={{ textDecoration: "none" }}
+            as={Link}
+            to={`/`}
+            style={{ flexBasis: "32%" }}
+          >
             <img
               src={logo}
               alt=""
@@ -41,20 +47,28 @@ const Header = () => {
               height="32"
               className="d-inline-block align-top"
             />
-            SOSmap
-          </Navbar.Brand>
-        </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse
-          id="basic-navbar-nav"
-          style={{ display: "flex", justifyContent: "space-between" }}
-        >
-          <Nav className="mr-auto ">
-            <Nav.Link href="#aboutus">About us</Nav.Link>
-            <Nav.Link href="#successstories">Success stories</Nav.Link>
-            <Nav.Link href="/requests">Requests</Nav.Link>
-          </Nav>
-          <div className=" justify-content-md-center">
+            <Navbar.Brand>SOS Map</Navbar.Brand>
+          </Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="navHam" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav
+              className="mr-auto "
+              style={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <Nav.Link as={Link} to="/funding">
+                Quyên góp
+              </Nav.Link>
+              <Nav.Link as={Link} to="/about">
+                Về chúng tôi
+              </Nav.Link>
+              <Nav.Link as={Link} to="/stories">
+                Câu chuyện
+              </Nav.Link>
+              <Nav.Link as={Link} to="/map">
+                Bản đồ
+              </Nav.Link>
+            </Nav>
+            {/* <div className=" justify-content-md-center">
             <Nav className="mr-auto justify-content-end">
               <Button
                 variant="outlined"
@@ -63,14 +77,13 @@ const Header = () => {
               >
                 Make a request
               </Button>
-              <Nav.Link href="/login">LogIn</Nav.Link>
-              <Nav.Link href="/signup">Sign up</Nav.Link>
             </Nav>
-          </div>
-        </Navbar.Collapse>
+          </div> */}
+          </Navbar.Collapse>
+        </Container>
       </Navbar>
 
-      <RequestForm open={open} setOpen={setOpen} />
+      {/* <RequestForm open={open} setOpen={setOpen} /> */}
     </>
   );
 };

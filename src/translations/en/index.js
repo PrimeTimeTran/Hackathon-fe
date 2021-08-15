@@ -7,4 +7,5 @@ export const TRANSLATIONS_EN = {
   men: "Men",
   female: "Female",
   activity: "Activity",
+  map: "map",
 };

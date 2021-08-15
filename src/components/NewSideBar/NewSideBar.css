@@ -1,0 +1,73 @@
+.Cl-SideBar {
+  /* padding-top: 20px; */
+  border-radius: 5px;
+  position: sticky;
+  top: 5rem;
+  left: 3rem;
+}
+
+.topBar {
+  position: none !important;
+}
+
+.cardTitleTex {
+  background-color: none !important;
+  border-bottom: none;
+  text-align: center;
+  /* color: red; */
+}
+.cardSideBar .card-header {
+  background-color: white;
+  padding-top: 2rem;
+}
+
+.cardBotton {
+  /* border: 5px solid yellow; */
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  top: 30%;
+}
+
+.cardSideBar {
+  box-shadow: 2px 4px 10px 0px #8888885e;
+}
+
+.cardBotton button {
+  background-color: #ff4c68;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+.cardBotton button:hover {
+  background-color: #ff9ead;
+}
+
+.modalsTitle {
+  text-align: center;
+  margin: auto;
+  width: 100%;
+}
+
+.modalsFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.buttonModal {
+  width: 150px;
+  background-color: #ff4c68;
+  border: none;
+  color: white;
+}
+
+.buttonModal:hover {
+  background-color: #ff9ead;
+}
