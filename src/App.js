@@ -3,11 +3,12 @@ import { BrowserRouter as Switch, Route } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import Header from "./components/Header/Header";
-import AboutPage from "./pages/AboutPage";
+
 import FundingPage from "./pages/FundingPage";
 import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundRequestDetailPage";
 // import Navbar from "./components/Navbar";
 import NewHomePage from "./pages/NewHomePage/NewHomePage";
+import AboutPage from "./pages/AboutPage/AboutPage";
 
 function App() {
   return (

@@ -27,32 +27,35 @@ const Header = () => {
 
   return (
     <>
-    
       <Navbar
         className="nav-bar justify-content-md-space-between justify-content-sm-space-around navpar"
         variant="light"
         expand="lg"
         sticky="top"
       >
-        <Link style={{ textDecoration: "none" }} as={Link} to={`/`}
-        style={{ flexBasis:'32%'}}>
-        <img
-              src={logo}
-              alt=""
-              width="32"
-              height="32"
-              className="d-inline-block align-top"
-            />
-          <Navbar.Brand>
-            SOS Map
-          </Navbar.Brand>
+        <Link
+          style={{ textDecoration: "none" }}
+          as={Link}
+          to={`/`}
+          style={{ flexBasis: "32%" }}
+        >
+          <img
+            src={logo}
+            alt=""
+            width="32"
+            height="32"
+            className="d-inline-block align-top"
+          />
+          <Navbar.Brand>SOS Map</Navbar.Brand>
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="navHam"/>
-        <Navbar.Collapse
-          id="basic-navbar-nav">
-          <Nav className="mr-auto " style={{ display: "flex", justifyContent: "space-between"}}>
-            <Nav.Link href="#aboutus">About us</Nav.Link>
-            <Nav.Link href="#successstories">Stories</Nav.Link>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="navHam" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav
+            className="mr-auto "
+            style={{ display: "flex", justifyContent: "space-between" }}
+          >
+            <Nav.Link href="/about">About us</Nav.Link>
+            <Nav.Link href="/stories">Stories</Nav.Link>
             <Nav.Link href="/requests">Requests</Nav.Link>
             <Nav.Link href="/login">Log in</Nav.Link>
             <Nav.Link href="/signup">Sign up</Nav.Link>
