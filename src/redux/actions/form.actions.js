@@ -15,9 +15,11 @@ const addItem = (item) => async (dispatch) => {
 const changePage = (toPage) => async (dispatch) => {
   dispatch({ type: types.CHANGE_PAGE, payload: toPage });
 };
+
 const changeSubpage = (toPage) => async (dispatch) => {
   dispatch({ type: types.CHANGE_SUBPAGE, payload: toPage });
 };
+
 const submitItems = ({ selectedItems, user }) => async (dispatch) => {
   const { phone, firstName } = user;
   const postRequest = {
@@ -26,10 +28,9 @@ const submitItems = ({ selectedItems, user }) => async (dispatch) => {
     petitionType: "provide",
     itemArray: selectedItems,
   };
-  console.log("HERE");
+
   try {
     const res = await api.post("/petitions/new", postRequest);
-    console.log({ res });
     dispatch({ type: types.SUBMIT_ITEMS, payload: res });
   } catch (err) {
     toast.error(err.message);
@@ -37,10 +38,8 @@ const submitItems = ({ selectedItems, user }) => async (dispatch) => {
 };
 const matchingForm = (user) => async (dispatch) => {
   try {
-    console.log(user);
     const res = await api.get(`/petitions/matching/${user.phone}`);
     const data = res.data.data.newPetitions;
-    console.log({ data });
     dispatch({ type: types.MATCHING_FORM, payload: data });
   } catch (err) {
     toast.error(err.message);
@@ -72,7 +71,5 @@ export const formActions = {
   matchingForm,
   getSingleForm,
   submitItems,
-
   submitPhone,
-
 };
