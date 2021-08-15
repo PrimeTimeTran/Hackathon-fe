@@ -10,7 +10,6 @@ import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundReques
 import FundDonationBankTransfer from "../src/pages/FundDonationBankTransfer/FundDonationBankTransfer";
 import FundRequestPage from "./pages/FundRequestPage/FundRequestPage";
 import NewHomePage from "./pages/NewHomePage/NewHomePage";
-
 import NewFooter from "./components/NewFooter/NewFooter";
 
 function App() {

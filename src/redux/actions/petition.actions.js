@@ -1,8 +1,6 @@
 import * as types from "../constants/petition.constants";
 import api from "../apiService";
 
-import { toastSuccess, toastFail } from "../Toast/ToastAction";
-
 const receiverRequest =
   (pageNum = 1, limit = 9, query = null, sortBy = null) =>
   async (dispatch) => {
