@@ -72,7 +72,7 @@ function HomePage() {
     const fetchPetitions = async () => {
       const resp = await fetch(url + "/petitions");
       const json = await resp.json();
-      let newPetitions = json.data.petitions;
+      let { newPetitions } = json.data;
 
       setAllPetitions(newPetitions);
       setPetitions(newPetitions);
