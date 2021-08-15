@@ -1,12 +1,14 @@
 import { combineReducers } from "redux";
+import ToastReducer from "../Toast/ToastReducer";
+import DonationRequestReducer from "../DonationRequest/DonationRequestReducer";
+import DonationRequestsReducer from "../DonationRequests/DonationRequestsReducer";
+import requestsReducer from "./request.reducers";
+import mapReducers from "./map.reducer";
 
 export default combineReducers({
-<<<<<<< HEAD
-=======
   toast: ToastReducer,
   requestDetail: DonationRequestReducer,
   requests: DonationRequestsReducer,
   requestReducer: requestsReducer,
->>>>>>> 58eca10b7880af79e931adc7cba1fc5dce0d1402
-  // TODO: add reducers in here
+  map: mapReducers,
 });

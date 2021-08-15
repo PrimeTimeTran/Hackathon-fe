@@ -1,36 +1,39 @@
 import React from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
-
+import "./css/form.css";
 import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
+import Header from "./components/Header/Header";
+
+import AboutPage from "./pages/AboutPage/AboutPage";
 import FundingPage from "./pages/FundingPage";
 import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundRequestDetailPage";
 import Navbar from "./components/Navbar";
-<<<<<<< HEAD
-import FunDetailRequestInfo from "./components/FunDetailRequestInfo/FunDetailRequestInfo";
+// import FunDetailRequestInfo from "./components/FunDetailRequestInfo/FunDetailRequestInfo";
 import NewHomePage from "./pages/NewHomePage/NewHomePage";
-=======
->>>>>>> 58eca10b7880af79e931adc7cba1fc5dce0d1402
+
+// import Navbar from "./components/Navbar";
+
+import NewFooter from "./components/NewFooter/NewFooter";
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <Header />
       <Switch>
-        <Route path="/" exact component={HomePage} />
+        <Route path="/" exact component={NewHomePage} />
         <Route path="/about" exact component={AboutPage} />
         <Route path="/funding" exact component={FundingPage} />
-<<<<<<< HEAD
-        <Route path="/funDetailPage" exact component={FunDetailRequestInfo} />
+        {/* <Route path="/funDetailPage" exact component={FunDetailRequestInfo} /> */}
         <Route path="/newHomePage" exact component={NewHomePage} />
-=======
+
+        <Route path="/map" exact component={HomePage} />
         <Route
           path="/fundRequestDetailPage"
           exact
           component={FundRequestDetailPage}
         />
->>>>>>> 58eca10b7880af79e931adc7cba1fc5dce0d1402
       </Switch>
+      <NewFooter />
     </div>
   );
 }
