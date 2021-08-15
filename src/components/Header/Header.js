@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./styles.css";
 import { Button } from "@material-ui/core";
@@ -33,28 +33,26 @@ const Header = () => {
         expand="lg"
         sticky="top"
       >
-        <Nav.Link
-          style={{ textDecoration: "none", flexBasis: "32%" }}
-          as={Link}
-          to={`/`}
-        >
-          <img
-            src={logo}
-            alt=""
-            width="32"
-            height="32"
-            className="d-inline-block align-top"
-          />
-          SOS Map
-        </Nav.Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="navHam" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav
-            className="mr-auto "
-            style={{ display: "flex", justifyContent: "space-between" }}
-          >
-            <Nav.Link href="/about">About us</Nav.Link>
-            <Nav.Link href="/stories">Stories</Nav.Link>
+       <Container >
+       <Link style={{ textDecoration: "none" }} as={Link} to={`/`}
+        style={{ flexBasis:'32%'}}>
+        <img
+              src={logo}
+              alt=""
+              width="32"
+              height="32"
+              className="d-inline-block align-top"
+            />
+          <Navbar.Brand>
+            SOS Map
+          </Navbar.Brand>
+        </Link>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="navHam"/>
+        <Navbar.Collapse
+          id="basic-navbar-nav">
+          <Nav className="mr-auto " style={{ display: "flex", justifyContent: "space-between"}}>
+            <Nav.Link href="#aboutus">About us</Nav.Link>
+            <Nav.Link href="#successstories">Stories</Nav.Link>
             <Nav.Link href="/requests">Requests</Nav.Link>
             <Nav.Link href="/login">Log in</Nav.Link>
             <Nav.Link href="/signup">Sign up</Nav.Link>
@@ -71,6 +69,7 @@ const Header = () => {
             </Nav>
           </div> */}
         </Navbar.Collapse>
+       </Container>
       </Navbar>
 
       {/* <RequestForm open={open} setOpen={setOpen} /> */}
