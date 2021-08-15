@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Switch, Route } from "react-router-dom";
-
+import "./css/form.css";
 import HomePage from "./pages/HomePage";
 import Header from "./components/Header/Header";
 
@@ -9,6 +9,7 @@ import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundReques
 // import Navbar from "./components/Navbar";
 import NewHomePage from "./pages/NewHomePage/NewHomePage";
 import AboutPage from "./pages/AboutPage/AboutPage";
+import NewFooter from "./components/NewFooter/NewFooter";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           component={FundRequestDetailPage}
         />
       </Switch>
+      <NewFooter />
     </div>
   );
 }
