@@ -7,7 +7,11 @@ import Header from "./components/Header/Header";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import FundingPage from "./pages/FundingPage";
 import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundRequestDetailPage";
+import FundDonationBankTransfer from "../src/pages/FundDonationBankTransfer/FundDonationBankTransfer";
+import FundRequestPage from "./pages/FundRequestPage/FundRequestPage";
 import NewHomePage from "./pages/NewHomePage/NewHomePage";
+import SignUpPage from "./pages/SignUp/SignUpPage";
+import LogInPage from "./pages/LogInPage/LogInPage";
 
 import NewFooter from "./components/NewFooter/NewFooter";
 
@@ -17,17 +21,20 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/" exact component={NewHomePage} />
-          <Route path="/about" exact component={AboutPage} />
-          <Route path="/funding" exact component={FundingPage} />
-          <Route path="/newHomePage" exact component={NewHomePage} />
-
-          <Route path="/map" exact component={HomePage} />
+          <Route path='/' exact component={NewHomePage} />
+          <Route path='/about' exact component={AboutPage} />
+          <Route path='/funding' exact component={FundingPage} />
+          <Route path='/newHomePage' exact component={NewHomePage} />
+          <Route path='/map' exact component={HomePage} />
+          <Route path='/funding/:id' exact component={FundRequestDetailPage} />
           <Route
-            path="/fundRequestDetailPage"
+            path='/funding/transfer/:id'
             exact
-            component={FundRequestDetailPage}
+            component={FundDonationBankTransfer}
           />
+          <Route path='/funding/request' exact component={FundRequestPage} />
+          <Route path='/signup' exact component={SignUpPage} />
+          <Route path='/login' exact component={LogInPage} />
         </Switch>
         <NewFooter />
       </Router>

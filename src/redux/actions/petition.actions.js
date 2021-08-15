@@ -20,7 +20,7 @@ const receiverRequest =
       const res = await api.get(
         `/petitions/receiver?page=${pageNum}&limit=${limit}${queryString}${sortByString}`
       );
-      console.log(res)
+      console.log(res);
       dispatch({ type: types.GET_RECEIVERS_SUCCESS, payload: res.data.data });
     } catch (err) {
       console.log(err);
@@ -71,8 +71,28 @@ const getSinglePetition = (petitionId) => async (dispatch) => {
   }
 };
 
+const getAllPetitions =
+  (pageNum = 1, limit = 9) =>
+  async (dispatch) => {
+    dispatch({ type: types.GET_ALL_PETITION_REQUEST, payload: null });
+    try {
+      const res = await api.get(`/petitions?page=${pageNum}&limit=${limit}`);
+      console.log(res);
+      dispatch({
+        type: types.GET_ALL_PETITION_SUCCESS,
+        payload: res.data.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: types.GET_ALL_PETITION_FAILURE,
+        payload: err,
+      });
+    }
+  };
+
 export const petitionActions = {
   receiverRequest,
   providerRequest,
   getSinglePetition,
+  getAllPetitions,
 };

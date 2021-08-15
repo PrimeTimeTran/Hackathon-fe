@@ -1,0 +1,22 @@
+.formSignUp {
+    border: 1px solid #ef8172;
+    border-radius: 10px;
+    width:60%;
+    padding: 3%;
+    margin: auto;
+    margin-top: 5%;
+    box-shadow: 5px 7px #ef8172;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.text-field{
+    width: 100%;
+}
+
+.submit{
+    width: 30%;
+    margin: auto;
+}
+

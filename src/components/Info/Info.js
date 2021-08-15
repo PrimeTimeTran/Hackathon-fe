@@ -6,26 +6,17 @@ const Info = () => {
   return (
     <div className='infoBox'>
       <Card className='infoBoxCard'>
-        <Card.Header className='infoBoxTitle'>
-          Donate or make a Donation Request with Ease!
-        </Card.Header>
         <Card.Body className='infoBody'>
           <div className='leftSide'>
-            <Card.Title className='infoBoxSubTitle'>
-              Donate Money to People in Need
-            </Card.Title>
+            <Card.Title className='infoBoxSubTitle'>Donate Goods</Card.Title>
             <Card.Text className='infoBoxText'>
               With two simple clicks you can donate money to people near you or
               in whole Vietnam who are currently struggling to maintain a
-              regular life. Simply chose a person you want to help from the
-              options below, choose to donate and make a bank transfer directly
-              to the person in need. No intermediary or other organizations are
-              involved! Your money goes directly to the person in need.
+              regular life. Your money goes directly to the person in need.
             </Card.Text>
             <Card.Text className='infoBoxText'>
               You would rather donate goods such as food, cloathes or hygenic
-              masks? Please click the button below and you will be redirected to
-              goods donation page and help people in your area right now!
+              masks?
             </Card.Text>
             <Button variant='primary' className='infoBoxButton'>
               I want to donate goods
@@ -43,7 +34,7 @@ const Info = () => {
             </Card.Text>
             <Card.Text className='infoBoxText'>
               Press the button below, sign up and join our community to receive
-              help as soon as possible!
+              help!
             </Card.Text>
             <Button variant='primary' className='infoBoxButton'>
               Sign up

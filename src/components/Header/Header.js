@@ -70,6 +70,12 @@ const Header = () => {
               <Nav.Link as={Link} to="/map">
                 {t("map")}
               </Nav.Link>
+              <Nav.Link as={Link} to="/signup">
+                {t("Sign Up")}
+              </Nav.Link>
+              <Nav.Link as={Link} to="/login">
+                {t("Login")}
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
