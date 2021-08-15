@@ -25,7 +25,6 @@ function ReceiverBankAccount() {
     name: "",
     email: "",
     Message: "",
-    anonymousMode: "",
   });
   // const { id } = useParams();
 
@@ -44,7 +43,7 @@ function ReceiverBankAccount() {
   };
   console.log("checkstate", state);
   return (
-    <div>
+    <div className="rqForm">
       <div className="py-4">
         <div className="container px-5 my-5">
           <Row className="justify-content-md-center">
@@ -74,7 +73,7 @@ function ReceiverBankAccount() {
               <div>
                 <div className="greenBox">
                   <Form.Label>
-                    <b>Please, input your donation </b>
+                    <b>Please, input your donation amount </b>
                   </Form.Label>
                   <div>
                     <Row>
@@ -96,11 +95,11 @@ function ReceiverBankAccount() {
                   </div>
                 </div>
                 <div className="padding2vw">
-                  <Form.Label>Your Name(required)</Form.Label>
+                  <Form.Label>Your Name (required)</Form.Label>
                   <InputGroup className="mb-3">
                     <FormControl
                       className="formControl"
-                      placeholder="e.g:Minak Mingu"
+                      placeholder="e.g: Phuong Ha"
                       aria-label="Recipient's username"
                       onChange={(e) =>
                         setState({ ...state, name: e.target.value })
@@ -123,7 +122,7 @@ function ReceiverBankAccount() {
                   You will receive gratitude messages and latest updates
                   regarding the project you support
                 </p>
-                <Form.Label>Write support comment</Form.Label>
+                <Form.Label>Write a support comment</Form.Label>
                 <InputGroup className="mb-3 ">
                   <FormControl
                     as="textarea"
@@ -135,20 +134,7 @@ function ReceiverBankAccount() {
                   />
                 </InputGroup>
               </div>
-              <div className="form-check ">
-                <input
-                  className="form-check-input "
-                  type="checkbox"
-                  onChange={(e) =>
-                    setState({ ...state, anonymousMode: e.target.checked })
-                  }
-                />
-                <label class="form-check-label" for="defaultCheck1">
-                  Support as an anonymous supporter. (Your profile will be only
-                  shown to the receiver)
-                </label>
-              </div>
-              <ul className="greenBox">
+              <ul className="greenBox support">
                 When you support
                 <li>Your name will be posted in supporters list.</li>{" "}
                 <li>You can receive gratitude messages.</li>
