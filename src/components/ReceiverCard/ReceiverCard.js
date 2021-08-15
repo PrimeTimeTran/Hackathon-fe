@@ -2,15 +2,12 @@ import React, { useState } from "react";
 
 import "./ReceiverCard.css";
 import { Card, ProgressBar, Row, Col } from "react-bootstrap";
+import placeholderImage from "../../images/person.jpg";
+import { useHistory } from "react-router-dom";
 
-const ReceiverCard = ({
-  media,
-  receiver,
-  moneyFunded,
-  description,
-  percentFunded,
-}) => {
+const ReceiverCard = ({ ...info }) => {
   const [hover, setHover] = useState(false);
+  const history = useHistory();
 
   const hoverStyle = {
     transition: "all 0.3s ease-out",
@@ -21,6 +18,7 @@ const ReceiverCard = ({
   return (
     <>
       <Card
+        onClick={() => history.push(`funding/${info._id}`)}
         onMouseEnter={() => {
           setHover(true);
         }}
@@ -38,7 +36,7 @@ const ReceiverCard = ({
       >
         <Card.Img
           variant='top'
-          src={media}
+          src={placeholderImage}
           style={{
             width: "100%",
             height: "10rem",
@@ -48,19 +46,23 @@ const ReceiverCard = ({
         />
 
         <Card.Body>
-          <Card.Title>{receiver}</Card.Title>
-          <Card.Text>{description}</Card.Text>
+          <Card.Title>
+            {info.owner.firstName} {info.owner.lastName}
+          </Card.Title>
+          <Card.Text>
+            {info.description || "Anyone please help fund me!"}
+          </Card.Text>
           <Row
             style={{ paddingTop: "15px", paddingBottom: "8px", fontSize: 12 }}
           >
             <Col>
               <Card.Text sm={9} style={{ textAlign: "left" }}>
-                <b>{moneyFunded.toLocaleString()}VND</b> raised
+                <b>{info.actualAmount.toLocaleString()}VND</b> raised
               </Card.Text>
             </Col>
             <Col>
               <Card.Text style={{ textAlign: "right" }}>
-                {percentFunded}%
+                {info.actualAmount / info.startedAmount}%
               </Card.Text>
             </Col>
           </Row>
@@ -68,7 +70,7 @@ const ReceiverCard = ({
           <ProgressBar
             style={{ height: 10 }}
             variant='warning'
-            now={percentFunded}
+            now={info.actualAmount / info.startedAmount}
           />
         </Card.Body>
       </Card>

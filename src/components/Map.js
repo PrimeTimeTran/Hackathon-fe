@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Col,
-  Row,
-  Container,
-  Button,
-  ButtonGroup,
-} from "react-bootstrap";
+import { Col, Row, Container, Button, ButtonGroup } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Map,

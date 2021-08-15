@@ -1,0 +1,31 @@
+.receiver_Contents {
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 2px 2px 3px 1px pink;
+  text-align: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.itemReceiver_Img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.formgiver {
+  margin: 20px;
+}
+
+.itemName {
+  margin: 20px;
+}
+
+.receiver_body {
+  text-align: left;
+}
+.receiverimg {
+  margin: 0;
+  padding: 0;
+}
