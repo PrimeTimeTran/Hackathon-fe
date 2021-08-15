@@ -8,26 +8,23 @@ import FundRequestDetailPage from "../src/pages/FundRequestDetailPage/FundReques
 import Navbar from "./components/Navbar";
 import FundDonationBankTransfer from "../src/pages/FundDonationBankTransfer/FundDonationBankTransfer";
 import FundRequestPage from "./pages/FundRequestPage/FundRequestPage";
+
 function App() {
   return (
     <div>
       <Navbar />
       <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/about" exact component={AboutPage} />
-        <Route path="/funding" exact component={FundingPage} />
+        <Route path='/' exact component={HomePage} />
+        <Route path='/about' exact component={AboutPage} />
+        <Route path='/funding' exact component={FundingPage} />
+        <Route path='/funding/:id' exact component={FundRequestDetailPage} />
         <Route
-          path="/fundRequestDetailPage"
-          exact
-          component={FundRequestDetailPage}
-        />
-        <Route
-          path="/FundDonationBankTransfer"
+          path='/funding/:id/transfer'
           exact
           component={FundDonationBankTransfer}
         />
       </Switch>
-      <Route path="/FundRequestPage" exact component={FundRequestPage} />
+      <Route path='/funding/request' exact component={FundRequestPage} />
     </div>
   );
 }
