@@ -48,4 +48,11 @@
 .infoBoxButton {
   border-radius: 8%;
   font-size: 20px;
+  color: white;
+  z-index: 1;
+}
+
+.receiverRequestButtons {
+  display: flex;
+  justify-content: space-around;
 }

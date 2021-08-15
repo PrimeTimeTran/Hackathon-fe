@@ -21,20 +21,20 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path='/' exact component={NewHomePage} />
-          <Route path='/about' exact component={AboutPage} />
-          <Route path='/funding' exact component={FundingPage} />
-          <Route path='/newHomePage' exact component={NewHomePage} />
-          <Route path='/map' exact component={HomePage} />
-          <Route path='/funding/:id' exact component={FundRequestDetailPage} />
+          <Route path="/" exact component={NewHomePage} />
+          <Route path="/about" exact component={AboutPage} />
+          <Route path="/funding" exact component={FundingPage} />
+          <Route path="/newHomePage" exact component={NewHomePage} />
+          <Route path="/map" exact component={HomePage} />
+          <Route path="/funding/:id" exact component={FundRequestDetailPage} />
           <Route
-            path='/funding/transfer/:id'
+            path="/funding/transfer/:id"
             exact
             component={FundDonationBankTransfer}
           />
-          <Route path='/funding/request' exact component={FundRequestPage} />
-          <Route path='/signup' exact component={SignUpPage} />
-          <Route path='/login' exact component={LogInPage} />
+          <Route path="/request" exact component={FundRequestPage} />
+          <Route path="/signup" exact component={SignUpPage} />
+          <Route path="/login" exact component={LogInPage} />
         </Switch>
         <NewFooter />
       </Router>

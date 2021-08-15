@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Button,
-  Card,
   Col,
   Form,
   FormControl,
@@ -10,16 +9,21 @@ import {
 } from "react-bootstrap";
 import NumberFormat from "react-number-format";
 import Imgupload from "../Imgupload/Imgupload";
+import "./FundRequestInfo.css";
 
 function FundRequestInfo() {
   // const dispatch = useDispatch();
   const [state, setState] = useState({
     donation: "",
-    name: "",
+    fname: "",
+    lname: "",
     email: "",
-    story: "",
-    anonymousMode: "",
     city: "",
+    bankName: "",
+    bankBranch: "",
+    bankNumber: "",
+    ownerName: "",
+    description: "",
   });
   // const { id } = useParams();
 
@@ -38,7 +42,7 @@ function FundRequestInfo() {
   };
   console.log("checkstate", state);
   return (
-    <div>
+    <div className="rqForm">
       <div className="py-4">
         <div className="container px-5 my-5">
           <Row className="justify-content-md-center">
@@ -46,19 +50,30 @@ function FundRequestInfo() {
               <div className=""></div>
               <div>
                 <div className="padding2vw">
-                  <Form.Label>Your Name(required)</Form.Label>
+                  <Form.Label>Your First Name (required)</Form.Label>
                   <InputGroup className="mb-3">
                     <FormControl
                       className="formControl"
-                      placeholder="e.g:Minak Mingu"
-                      aria-label="Recipient's username"
+                      placeholder="e.g: Minh"
+                      aria-label="Recipient's First Name"
                       onChange={(e) =>
-                        setState({ ...state, name: e.target.value })
+                        setState({ ...state, fname: e.target.value })
+                      }
+                    />
+                  </InputGroup>
+                  <Form.Label>Your Last Name (required)</Form.Label>
+                  <InputGroup className="mb-3">
+                    <FormControl
+                      className="formControl"
+                      placeholder="e.g: Nguyen"
+                      aria-label="Recipient's Last Name"
+                      onChange={(e) =>
+                        setState({ ...state, lname: e.target.value })
                       }
                     />
                   </InputGroup>
                 </div>
-                <Form.Label> Your Email address (optional)</Form.Label>
+                <Form.Label> Your Email address (required)</Form.Label>
                 <InputGroup className="mb-3">
                   <FormControl
                     className="formControl"
@@ -73,32 +88,77 @@ function FundRequestInfo() {
                 <InputGroup className="mb-3">
                   <FormControl
                     className="formControl"
-                    placeholder="e.g:Ho Chi Minh"
+                    placeholder="e.g: Ho Chi Minh"
                     aria-label="Recipient's city"
                     onChange={(e) =>
                       setState({ ...state, city: e.target.value })
                     }
                   />
                 </InputGroup>
-                <p>
-                  You will receive gratitude messages and latest updates
-                  regarding the project you support
-                </p>
-                <Form.Label>Describe why you request the money</Form.Label>
+                <Form.Label>Your Bank (required)</Form.Label>
+                <InputGroup className="mb-3">
+                  <FormControl
+                    className="formControl"
+                    placeholder="e.g: Shinhan Bank"
+                    aria-label="Recipient's Bank"
+                    onChange={(e) =>
+                      setState({ ...state, bankName: e.target.value })
+                    }
+                  />
+                </InputGroup>
+                <Form.Label>Your Branch (required)</Form.Label>
+                <InputGroup className="mb-3">
+                  <FormControl
+                    className="formControl"
+                    placeholder="e.g: Dong Da Branch"
+                    aria-label="Recipient's Bank Branch"
+                    onChange={(e) =>
+                      setState({ ...state, bankBranch: e.target.value })
+                    }
+                  />
+                </InputGroup>
+                <Form.Label>
+                  Your Account Number (required - only numbers no signs please!)
+                </Form.Label>
+                <InputGroup className="mb-3">
+                  <FormControl
+                    className="formControl"
+                    placeholder="Please fill in your account number"
+                    aria-label="Recipient's Account Number"
+                    onChange={(e) =>
+                      setState({ ...state, bankNumber: e.target.value })
+                    }
+                  />
+                </InputGroup>
+                <Form.Label>Account Holder (required)</Form.Label>
+                <InputGroup className="mb-3">
+                  <FormControl
+                    className="formControl"
+                    placeholder="e.g: Minh Tam Thi Nguyen"
+                    aria-label="Account Holder Name"
+                    onChange={(e) =>
+                      setState({ ...state, ownerName: e.target.value })
+                    }
+                  />
+                </InputGroup>
+
+                <Form.Label>
+                  Please, explain the reason for your request
+                </Form.Label>
                 <InputGroup className="mb-3 ">
                   <FormControl
                     as="textarea"
                     className="textarea formControl"
-                    placeholder="e.g: My grandma is in the hospital.."
+                    placeholder="e.g: I lost my job due to covid..."
                     onChange={(e) =>
-                      setState({ ...state, story: e.target.value })
+                      setState({ ...state, description: e.target.value })
                     }
                   />
                 </InputGroup>
               </div>
               <div className="greenBox">
                 <Form.Label>
-                  <b>How much do you need?</b>
+                  <b>How much money would you like to request?</b>
                 </Form.Label>
                 <div>
                   <Row>
@@ -109,7 +169,7 @@ function FundRequestInfo() {
                         suffix={" VND"}
                         placeholder="e.g: 300.000 VND"
                         onChange={(e) => {
-                          a = parseFloat(e.target.value.replace(/\VND|,/g, ""));
+                          a = parseFloat(e.target.value.replace(/VND|,/g, ""));
                           setState({ ...state, donation: a });
                         }}
                       />
@@ -118,10 +178,10 @@ function FundRequestInfo() {
                 </div>
               </div>
               <div className="verificationButtons">
-                <Imgupload className="rightButton" />
+                <Imgupload className="rightButton rqButton" />
                 <Button
                   variant=""
-                  className="btn-primary-t leftButton"
+                  className="btn-primary-t leftButton rqButton"
                   onClick={handleOnclick}
                 >
                   Complete

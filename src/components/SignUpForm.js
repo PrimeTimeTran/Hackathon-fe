@@ -10,13 +10,15 @@ import Input from "react-phone-number-input";
 
 const SignUpForm = ({ setIsSubmitted, setAlert }) => {
   const [phone, setPhone] = useState("");
-  const [name, setName] = useState("");
+  const [fname, setFName] = useState("");
+  const [lname, setLName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [media, setMedia] = useState("");
 
   const data = {
-    name: name,
+    fname: fname,
+    lname: lname,
     email: email,
     password: password,
     phone: phone,
@@ -38,8 +40,12 @@ const SignUpForm = ({ setIsSubmitted, setAlert }) => {
 
   console.log("user data", data);
 
-  const handleName = (e) => {
-    setName(e.target.value);
+  const handleFName = (e) => {
+    setFName(e.target.value);
+  };
+
+  const handleLName = (e) => {
+    setLName(e.target.value);
   };
 
   const handleEmail = (e) => {
@@ -59,7 +65,8 @@ const SignUpForm = ({ setIsSubmitted, setAlert }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
-      !name ||
+      !fname ||
+      !lname ||
       !email ||
       !email.includes("@") ||
       !password ||
@@ -88,13 +95,23 @@ const SignUpForm = ({ setIsSubmitted, setAlert }) => {
         SIGN UP FOR FREE
       </h1>
       <TextField
-        placeholder="Input your name"
+        placeholder="Input your first name"
         id="outlined-basic"
         className="text-field"
         label="Username *"
         type="text"
         variant="outlined"
-        onChange={handleName}
+        onChange={handleFName}
+      />{" "}
+      <br />
+      <TextField
+        placeholder="Input your last name"
+        id="outlined-basic"
+        className="text-field"
+        label="Username *"
+        type="text"
+        variant="outlined"
+        onChange={handleLName}
       />{" "}
       <br />
       <TextField
