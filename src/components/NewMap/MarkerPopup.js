@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useDispatch, useSelector } from 'react-redux';
+import {useSelector } from 'react-redux';
 // import { mapActions } from '../../redux/actions/map.actions';
 
 const MarkerPopup = ({ handleClose }) => {
-	const dispatch = useDispatch();
 	const marker = useSelector((state) => state.map.selectedMarker);
 	
 	// const form = useSelector((state) => state.map.form);

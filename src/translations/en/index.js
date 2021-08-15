@@ -7,5 +7,15 @@ export const TRANSLATIONS_EN = {
   men: "Men",
   female: "Female",
   activity: "Activity",
-  map: "map",
+  funding: "Funding",
+  about: "About us",
+  stories: "Stories",
+  map: "Map",
+  give: "Give",
+  receive: "Receive",
+  want: "You want to",
+  food: "Food",
+  money: "Money",
+  want_to_receive: "You want to receive",
+  want_to_give: "You want to give"
 };

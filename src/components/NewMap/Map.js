@@ -28,7 +28,7 @@ const Map = ({ receivers, providers, setMarkerShow }) => {
         setGeocode({ ...geocode, lng: position.coords.longitude });
       });
     }
-  }, []);
+  }, [geocode]);
 
   const REACT_APP_GOOGLE_API = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   const containerStyle = {
