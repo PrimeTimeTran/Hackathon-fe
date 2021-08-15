@@ -19,7 +19,7 @@ function IndexForm() {
   return (
     <>
       {options.map((item) => {
-        if (item != "matching") {
+        if (item !== "matching") {
           return (
             <div
               className={`form-image-button form-${item}`}

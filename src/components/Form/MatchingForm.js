@@ -8,7 +8,7 @@ const MatchingForm = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(formActions.matchingForm(user));
-  }, []);
+  }, [user, dispatch]);
   // console.log(matchingForm);
 
   return (

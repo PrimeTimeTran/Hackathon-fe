@@ -1,29 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./styles.css";
-import { Button } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
+
+// import { useHistory } from "react-router-dom";
 // import RequestForm from "../RequestFrom";
 
 import logo from "./logo.png";
 
 const Header = () => {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
-  const history = useHistory();
+  // const history = useHistory();
 
-  const HandleClickOpen = () => {
-    console.log(typeof localStorage.getItem("isLoggedIn"));
-    if (localStorage.getItem("isLoggedIn") === "true") {
-      console.log("if");
-      setOpen(true);
-    } else {
-      console.log("else");
-      alert("Please log in to use this function.");
-      history.push("/login");
-    }
-  };
+  // const HandleClickOpen = () => {
+  //   console.log(typeof localStorage.getItem("isLoggedIn"));
+  //   if (localStorage.getItem("isLoggedIn") === "true") {
+  //     console.log("if");
+  //     setOpen(true);
+  //   } else {
+  //     console.log("else");
+  //     alert("Please log in to use this function.");
+  //     history.push("/login");
+  //   }
+  // };
 
   return (
     <>
@@ -35,10 +35,9 @@ const Header = () => {
       >
         <Container>
           <Link
-            style={{ textDecoration: "none" }}
+            style={{ textDecoration: "none", flexBasis: "32%" }}
             as={Link}
             to={`/`}
-            style={{ flexBasis: "32%" }}
           >
             <img
               src={logo}

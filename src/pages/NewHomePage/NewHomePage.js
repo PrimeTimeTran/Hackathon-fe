@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row, Tab, Tabs, Modal, Button } from "react-bootstrap";
+import { Col, Container, Row, Tab, Tabs, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import ReciverPettion from "../../components/ReciverPettion/ReciverPettion";
 import { useHistory } from "react-router-dom";
 import { formActions } from "../../redux/actions/form.actions";
 import { mapActions } from "../../redux/actions/map.actions";
-import { ClipLoader } from "react-spinners/ClipLoader";
+
 import "./style.css";
 import ProviderPetition from "../../components/ProviderPetition/ProviderPettion";
 import PaginationBar from "../../components/PaginationBar/PaginationBar";
 import NewSideBar from "../../components/NewSideBar/NewSideBar";
-import MainForm from "../../components/Form/MainForm";
+
 // import Login from '../../components/Login/Login';
 import MarkerPopup from "../../components/NewMap/MarkerPopup";
 import Map from "../../components/NewMap/Map";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { petitionActions } from "../../redux/actions/petition.actions";
 import "./style.css";
