@@ -1,9 +1,16 @@
 import React from "react";
 import { Badge } from "react-bootstrap";
 import Moment from "react-moment";
+import { useTranslation } from "react-i18next";
+
 import "./style.css";
 
 const ReciverPettion = ({ reciver, handleClick }) => {
+  const { t } = useTranslation();
+  const statusValue = () => {
+    return reciver?.status === "requested" ? t("status_value") : "";
+  };
+
   return (
     <>
       <div className="receiver_Contents">
@@ -17,7 +24,7 @@ const ReciverPettion = ({ reciver, handleClick }) => {
           />
           <div className="formgiver">
             <Badge style={{ "text-indent": "0.5em" }} bg="success">
-              Từ
+              {t("from")}
             </Badge>
             <h6>
               {reciver?.owner?.lastName} {reciver?.owner?.firstName}
@@ -30,21 +37,29 @@ const ReciverPettion = ({ reciver, handleClick }) => {
             <div className="itemName">
               {reciver?.items?.map((item) => (
                 <>
-                  <div>{`Loại: ${item.type}`}</div>
-                  <div>{`Tên: ${item.name}`}</div>
-                  <div>{`Số lượng: ${item.weight}`}</div>
+                  <div>
+                    {t("type")}: {item.type}
+                  </div>
+                  <div>
+                    {t("name")}: {item.name}
+                  </div>
+                  <div>
+                    {t("quantity")}: {item.weight}
+                  </div>
                 </>
               ))}
             </div>
 
             <div className="itemName">
-              <div>{`Cần nhận: ${reciver?.receiveAmount}`}</div>
-              <div>{`Trạng thái: ${
-                reciver?.status === "requested" ? "Đang cần giúp đỡ" : ""
-              }`}</div>
+              <div>
+                {t("wishes_to_receive")}: {reciver?.receiveAmount}
+              </div>
+              <div>
+                {t("status")}: {statusValue()}
+              </div>
               <div>
                 {" "}
-                Lúc:{" "}
+                {t("time")}:{" "}
                 <Moment fromNow ago>
                   {reciver?.isolatedDate}
                 </Moment>

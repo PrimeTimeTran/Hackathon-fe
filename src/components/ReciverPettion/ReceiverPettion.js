@@ -31,7 +31,7 @@ const ReceiverPettion = ({ receiver, handleClick }) => {
           </div>
         </div>
 
-        <div className="receiver_Descrip">
+        <div>
           <div className="receiver_body">
             <div className="itemName">
               {receiver?.items?.map((item) => (
