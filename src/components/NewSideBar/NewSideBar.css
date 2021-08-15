@@ -16,6 +16,10 @@
   text-align: center;
   /* color: red; */
 }
+.cardSideBar .card-header {
+  background-color: white;
+  padding-top: 2rem;
+}
 
 .cardBotton {
   /* border: 5px solid yellow; */
@@ -28,7 +32,7 @@
 }
 
 .cardSideBar {
-  box-shadow: 2px 3px 7px #888888;
+  box-shadow: 2px 4px 10px 0px #8888885e;
 }
 
 .cardBotton button {

@@ -33,31 +33,42 @@ const Header = () => {
         expand="lg"
         sticky="top"
       >
-       <Container >
-       <Link style={{ textDecoration: "none" }} as={Link} to={`/`}
-        style={{ flexBasis:'32%'}}>
-        <img
+        <Container>
+          <Link
+            style={{ textDecoration: "none" }}
+            as={Link}
+            to={`/`}
+            style={{ flexBasis: "32%" }}
+          >
+            <img
               src={logo}
               alt=""
               width="32"
               height="32"
               className="d-inline-block align-top"
             />
-          <Navbar.Brand>
-            SOS Map
-          </Navbar.Brand>
-        </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="navHam"/>
-        <Navbar.Collapse
-          id="basic-navbar-nav">
-          <Nav className="mr-auto " style={{ display: "flex", justifyContent: "space-between"}}>
-            <Nav.Link href="#aboutus">About us</Nav.Link>
-            <Nav.Link href="#successstories">Stories</Nav.Link>
-            <Nav.Link href="/requests">Requests</Nav.Link>
-            <Nav.Link href="/login">Log in</Nav.Link>
-            <Nav.Link href="/signup">Sign up</Nav.Link>
-          </Nav>
-          {/* <div className=" justify-content-md-center">
+            <Navbar.Brand>SOS Map</Navbar.Brand>
+          </Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="navHam" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav
+              className="mr-auto "
+              style={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <Nav.Link as={Link} to="/funding">
+                Quyên góp
+              </Nav.Link>
+              <Nav.Link as={Link} to="/about">
+                Về chúng tôi
+              </Nav.Link>
+              <Nav.Link as={Link} to="/stories">
+                Câu chuyện
+              </Nav.Link>
+              <Nav.Link as={Link} to="/map">
+                Bản đồ
+              </Nav.Link>
+            </Nav>
+            {/* <div className=" justify-content-md-center">
             <Nav className="mr-auto justify-content-end">
               <Button
                 variant="outlined"
@@ -68,8 +79,8 @@ const Header = () => {
               </Button>
             </Nav>
           </div> */}
-        </Navbar.Collapse>
-       </Container>
+          </Navbar.Collapse>
+        </Container>
       </Navbar>
 
       {/* <RequestForm open={open} setOpen={setOpen} /> */}

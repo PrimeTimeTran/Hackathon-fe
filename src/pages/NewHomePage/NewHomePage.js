@@ -68,16 +68,23 @@ const NewHomePage = ({ handleClick }) => {
 
           <div className="mainPage_Section col-10">
             <Row>
-              <Col>Heyyyyy I'm a DIVVVV</Col>
+              <Col style={{ padding: "4rem", paddingTop: "2rem" }}>
+                <h1>SOS map</h1>
+                <h3>
+                  Chung tay hỗ trợ bà con về nhu yếu phẩm để cùng nhau vượt qua
+                  mùa dịch với tinh thần yêu thương chia sẻ!
+                </h3>
+              </Col>
               <Col>
                 {recivers.newPetitions?.length &&
                 providers.newPetitions?.length ? (
-                  <Map
-                    className="col-4"
-                    receivers={recivers}
-                    providers={providers}
-                    setMarkerShow={setMarkerShow}
-                  />
+                  <div>
+                    <Map
+                      receivers={recivers}
+                      providers={providers}
+                      setMarkerShow={setMarkerShow}
+                    />
+                  </div>
                 ) : (
                   ""
                 )}
@@ -116,7 +123,7 @@ const NewHomePage = ({ handleClick }) => {
               >
                 <Tab
                   eventKey="recivers"
-                  title="Receivers"
+                  title="Người cần nhận"
                   className="tab-title"
                 >
                   {recivers.newPetitions?.length ? (
@@ -135,7 +142,7 @@ const NewHomePage = ({ handleClick }) => {
                     <p>There are no Reciver</p>
                   )}
                 </Tab>
-                <Tab eventKey="providers" title="Providers">
+                <Tab eventKey="providers" title="Người cần cho">
                   {providers.newPetitions?.length ? (
                     <>
                       {providers.newPetitions.map((provider) => (

@@ -19,16 +19,11 @@ const ProviderPetition = ({ provider, handleClick }) => {
           <div className="provider_body">
             <div className="formgiver">
               <Badge style={{ "text-indent": "0.5em" }} bg="success">
-                From
+                Từ
               </Badge>
               <h6>
                 {provider?.owner?.lastName} {provider?.owner?.firstName}
               </h6>
-              <div>
-                <p>{`Gender: ${
-                  provider?.owner.gender === "m" ? "Male" : "Female"
-                }`}</p>
-              </div>
 
               <br />
             </div>
@@ -40,8 +35,10 @@ const ProviderPetition = ({ provider, handleClick }) => {
                 </>
               ))}
             </div>
-            <div>{`Status: ${provider?.status}`}</div>
-            Create at:{" "}
+            <div>{`Trạng thái: ${
+              provider?.status === "requested" ? "Cần cho" : ""
+            }`}</div>
+            Tạo lúc:{" "}
             <Moment className="status" fromNow ago>
               {provider?.isolatedDate}
             </Moment>

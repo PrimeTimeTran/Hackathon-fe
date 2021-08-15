@@ -17,17 +17,11 @@ const ReciverPettion = ({ reciver, handleClick }) => {
           />
           <div className="formgiver">
             <Badge style={{ "text-indent": "0.5em" }} bg="success">
-              From
+              Từ
             </Badge>
             <h6>
               {reciver?.owner?.lastName} {reciver?.owner?.firstName}
             </h6>
-
-            <div>
-              <p>{`Gender: ${
-                reciver?.owner.gender === "m" ? "Male" : "Female"
-              }`}</p>
-            </div>
           </div>
         </div>
 
@@ -36,19 +30,21 @@ const ReciverPettion = ({ reciver, handleClick }) => {
             <div className="itemName">
               {reciver?.items?.map((item) => (
                 <>
-                  <div>{`Type: ${item.type}`}</div>
-                  <div>{`Name: ${item.name}`}</div>
-                  <div>{`Weight: ${item.weight}`}</div>
+                  <div>{`Loại: ${item.type}`}</div>
+                  <div>{`Tên: ${item.name}`}</div>
+                  <div>{`Số lượng: ${item.weight}`}</div>
                 </>
               ))}
             </div>
 
             <div className="itemName">
-              <div>{`ReceiveAmount: ${reciver?.receiveAmount}`}</div>
-              <div>{`Status: ${reciver?.status}`}</div>
+              <div>{`Cần nhận: ${reciver?.receiveAmount}`}</div>
+              <div>{`Trạng thái: ${
+                reciver?.status === "requested" ? "Đang cần giúp đỡ" : ""
+              }`}</div>
               <div>
                 {" "}
-                Create at:{" "}
+                Lúc:{" "}
                 <Moment fromNow ago>
                   {reciver?.isolatedDate}
                 </Moment>

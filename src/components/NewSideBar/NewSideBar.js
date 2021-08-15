@@ -53,12 +53,12 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
           <Card className="cardSideBar">
             <Card.Header className="cardTitleTex">
               {" "}
-              <strong>You'd like to </strong>
+              <strong>Bạn muốn </strong>
             </Card.Header>
             <Card.Body>
               <div className="cardBotton">
                 <Button variant="light" className="btn" onClick={handleShow}>
-                  Donate
+                  Cho
                 </Button>
                 <br />
                 <Button
@@ -66,7 +66,7 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
                   className="btn"
                   onClick={handleShowReceive}
                 >
-                  Receive
+                  Nhận
                 </Button>
               </div>
             </Card.Body>
@@ -79,18 +79,18 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
       {/* modals donate */}
       <Modal className="popup-modal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title className="modalsTitle">Want To Donate</Modal.Title>
+          <Modal.Title className="modalsTitle">Bạn muốn cho</Modal.Title>
         </Modal.Header>
         <Modal.Footer className="modalsFooter">
           <Button variant="light" className="buttonModal">
-            Fund
+            Tiền
           </Button>
           <Button
             onClick={handleShowDonate}
             variant="light"
             className="buttonModal"
           >
-            Food
+            Thức ăn
           </Button>
         </Modal.Footer>
       </Modal>
@@ -102,14 +102,14 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
         </Modal.Header>
         <Modal.Footer className="modalsFooter">
           <Button variant="light" className="buttonModal">
-            Fund
+            Tiền
           </Button>
           <Button
             onClick={handleShowDonate}
             variant="light"
             className="buttonModal"
           >
-            Food
+            Thức ăn
           </Button>
         </Modal.Footer>
       </Modal>
