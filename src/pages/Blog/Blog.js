@@ -22,7 +22,7 @@ const Blog = () => {
 	};
 	useEffect(() => {
 		dispatch(blogActions.getAllBlogs());
-	}, []);
+	}, [dispatch]);
 	return (
 		<div className="blog-page">
 			<div className="blog-banner">

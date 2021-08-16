@@ -25,7 +25,7 @@ function App() {
 			history.push(redirect);
 			dispatch(routeActions.removeRedirectTo);
 		}
-	}, [redirect]);
+	}, [redirect, dispatch, history]);
 	return (
 		<div className="App">
 			<Header />

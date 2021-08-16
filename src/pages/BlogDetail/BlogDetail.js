@@ -1,8 +1,7 @@
 import Interweave from 'interweave';
 import { HashtagMatcher, UrlMatcher } from 'interweave-autolink';
 import moment from 'moment';
-import React, { useState, useEffect } from 'react';
-import { Container } from 'react-bootstrap';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { blogActions } from '../../redux/actions/blog.actions';
@@ -14,12 +13,12 @@ const BlogDetail = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(blogActions.getSingleBlog({ slug }));
-	}, [slug]);
+	}, [slug, dispatch]);
 	return (
 		<div className="blog-detail-page d-flex flex-column align-items-center">
 			<div className="bg-white blog-post mt-3">
 				<div className="blog-card-photo p-0">
-					<img src={selectedBlog.cover_photo} />
+					<img src={selectedBlog.cover_photo} alt="cover" />
 				</div>
 				<div className="p-4">
 					<div className="blog-post-title-wrapper">

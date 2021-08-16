@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +12,7 @@ const BlogAdmin = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(blogActions.getAllBlogs());
-	}, []);
+	}, [dispatch]);
 	return (
 		<div className="blog-detail-page d-flex flex-column align-items-center">
 			<div className="p-3 w-100 container d-flex flex-column align-items-center">
