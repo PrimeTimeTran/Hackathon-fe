@@ -140,7 +140,7 @@ const BlogEditor = ({ createNew }) => {
 								<div className="blog-card-title">{title || 'Title of the Post'}</div>
 							</div>
 							<div className="blog-card-credit">
-								{t('written_by')} <i>{author || 'Unknown'}</i> {t('at_time').toLowerCase()} {blog.createdAt || moment(Date.now()).format('DD-MM-yyyy')}
+								{t('written_by')} <i>{author || 'Unknown'}</i> {t('at_time').toLowerCase()} {moment(blog.createdAt).format('DD-MM-yyyy') || moment(Date.now()).format('DD-MM-yyyy')}
 							</div>
 							<div>❤️</div>
 							<div className="blog-card-content">{stripTag(body) ? truncate(stripTag(body), 25) : 'Excerpt of the post'}</div>

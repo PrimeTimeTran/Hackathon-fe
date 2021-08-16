@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React, { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
@@ -43,7 +44,7 @@ const Blog = () => {
 								<div className="blog-card-title">{item.title}</div>
 							</div>
 							<div className="blog-card-credit">
-								{t('written_by')} <i>{item.author}</i> {t('at_time').toLowerCase()} {item.createdAt}
+								{t('written_by')} <i>{item.author}</i> {t('at_time').toLowerCase()} {moment(item.createdAt).format('DD-MM-yyyy')}
 							</div>
 							<div>❤️</div>
 							<div className="blog-card-content">{truncate(stripTag(item.body), 25)}</div>
