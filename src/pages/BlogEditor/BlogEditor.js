@@ -1,10 +1,8 @@
-import Interweave from 'interweave';
 import moment from 'moment';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useMemo } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import ReactQuill from 'react-quill';
-import { HashtagMatcher, UrlMatcher } from 'interweave-autolink';
 import 'react-quill/dist/quill.snow.css';
 import './style.css';
 import { useParams } from 'react-router-dom';
@@ -87,7 +85,7 @@ const BlogEditor = ({ createNew }) => {
 		if (slug) {
 			dispatch(blogActions.getSingleBlog({ slug }));
 		}
-	}, [slug]);
+	}, [slug, dispatch]);
 	return (
 		<div className="blog-page p-3">
 			<div className="d-flex flex-column align-items-center">
