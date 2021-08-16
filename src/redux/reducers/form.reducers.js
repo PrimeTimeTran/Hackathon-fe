@@ -4,7 +4,7 @@ const initialState = {
   page: "index", // 'index', 'food', 'household', 'medical', 'donate', 'matching'
   subPage: null, // 'ramen', 'rice', 'milk', 'egg', 'vegetable',  'clothing', 'stove', 'mask', 'disinfectant', 'other', 'receiver'
   items: [],
-  user,
+  user, //{phone, firstName, lat, lng, petitionType}
   matchingForm: [],
   singleForm: {},
   menu: {

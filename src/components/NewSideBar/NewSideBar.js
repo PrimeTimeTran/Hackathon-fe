@@ -12,6 +12,7 @@ import { useEffect } from "react";
 
 const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
   const [show, setShow] = useState(false);
+  const [petitionType, setPetitionType] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [geocode, setGeocode] = useState({
     lat: 10.77788992345464,
@@ -19,12 +20,13 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
   });
   const [form, setForm] = useState({ phone: "", firstName: "" });
   const dispatch = useDispatch();
-
+  console.log(petitionType);
   const [showDonate, setShowDonate] = useState(false);
   const [receive, setReceive] = useState(false);
   const handleDonateClose = () => {
     setShowDonate(false);
   };
+  console.log(show);
   const handleFormClose = () => {
     setShowForm(false);
     dispatch(formActions.changePage("index"));
@@ -53,8 +55,18 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
       setAskShow(false);
     }
     setShowDonate(true);
+    setPetitionType("provide");
   };
+
   const handleShowReceive = () => {
+    if (setAskShow) {
+      setAskShow(false);
+    }
+    setShowDonate(true);
+    setPetitionType("receive");
+  };
+
+  const handleShowReceiveOpenModal = () => {
     if (setAskShow) {
       setAskShow(false);
     }
@@ -63,8 +75,10 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
 
   const handelSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("user", JSON.stringify(form));
-    dispatch(formActions.submitPhone({ ...form, ...geocode }));
+    const data = { ...form, ...geocode, petitionType };
+    console.log(data);
+    localStorage.setItem("user", JSON.stringify(data));
+    dispatch(formActions.submitPhone(data));
   };
   const handleOnChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -101,7 +115,7 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
                 <Button
                   variant="light"
                   className="btn"
-                  onClick={handleShowReceive}
+                  onClick={handleShowReceiveOpenModal}
                 >
                   {t("receive")}
                 </Button>
@@ -126,11 +140,13 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
             onClick={handleShowDonate}
             variant="light"
             className="buttonModal"
+            name="food"
           >
             {t("food")}
           </Button>
         </Modal.Footer>
       </Modal>
+      {/* modals receive */}
       <Modal className="popup-modal" show={receive} onHide={handleCloseReceive}>
         <Modal.Header closeButton>
           <Modal.Title className="modalsTitle"></Modal.Title>
@@ -143,9 +159,10 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
             {t("money")}
           </Button>
           <Button
-            onClick={handleShowDonate}
+            onClick={handleShowReceive}
             variant="light"
             className="buttonModal"
+            name="food"
           >
             {t("food")}
           </Button>
