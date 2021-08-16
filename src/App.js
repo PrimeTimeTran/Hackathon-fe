@@ -21,11 +21,11 @@ function App() {
 	const redirect = useSelector((state) => state.route.redirectTo);
 	const dispatch = useDispatch();
 	useEffect(() => {
-		if (redirect) {
-			history.push(redirect);
-			dispatch(routeActions.removeRedirectTo);
-		}
-	}, [redirect]);
+    if (redirect) {
+      history.push(redirect);
+      dispatch(routeActions.removeRedirectTo);
+    }
+  }, [redirect, dispatch, history]);
 	return (
 		<div className="App">
 			<Header />

@@ -30,6 +30,7 @@ api.interceptors.response.use(
 		console.log('RESPONSE ERROR', error);
 		let errorMsg = error.message || '';
 		if (error.errors && error.errors.message) errorMsg = errorMsg + ': ' + error.errors.message;
+    console.log({ errorMsg });
 		// store.dispatch(alertActions.setAlert(errorMsg, "danger"));
 		return Promise.reject(error);
 	}
