@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React, { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
@@ -32,7 +33,7 @@ const Blog = () => {
 					<div className="blog-banner-subtext">Nơi điều kỳ diệu bắt đầu</div>
 				</div>
 			</div>
-			<Container className="blog-cards d-flex flex-column align-items-center">
+			<Container className="blog-cards d-flex flex-column align-items-center mt-2">
 				{blogs.map((item, index) => (
 					<Row className={`blog-card ${index % 2 ? 'flex-row-reverse' : ''}`}>
 						<Col xl={7} className="blog-card-photo p-0">
@@ -43,7 +44,7 @@ const Blog = () => {
 								<div className="blog-card-title">{item.title}</div>
 							</div>
 							<div className="blog-card-credit">
-								{t('written_by')} <i>{item.author}</i> {t('at_time').toLowerCase()} {item.createdAt}
+								{t('written_by')} <i>{item.author}</i> {t('at_time').toLowerCase()} {moment(item.createdAt).format('DD-MM-yyyy')}
 							</div>
 							<div>❤️</div>
 							<div className="blog-card-content">{truncate(stripTag(item.body), 25)}</div>
