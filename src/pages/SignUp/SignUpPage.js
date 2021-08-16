@@ -9,7 +9,7 @@ import SignUpForm from "../../components/SignUpForm";
 const SignUpPage = () => {
   const [alert, setAlert] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [success] = useState(false);
 
   return (
     <>

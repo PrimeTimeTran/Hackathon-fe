@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Card,
   Col,
-  Container,
   Form,
   FormControl,
   InputGroup,
   Row,
 } from "react-bootstrap";
 // import { useDispatch, useSelector } from "react-redux";
-import { toastFail, toastSuccess } from "../../redux/Toast/ToastAction";
 import "./Style.css";
 import NumberFormat from "react-number-format";
 import Imgupload from "../Imgupload/Imgupload";
@@ -43,23 +41,23 @@ function ReceiverBankAccount() {
   };
   console.log("checkstate", state);
   return (
-    <div className="rqForm">
-      <div className="py-4">
-        <div className="container px-5 my-5">
-          <Row className="justify-content-md-center">
-            <Col xs={12} md={8} C="container-border-Transfer">
-              <div className="">
+    <div className='rqForm'>
+      <div className='py-4'>
+        <div className='container px-5 my-5'>
+          <Row className='justify-content-md-center'>
+            <Col xs={12} md={8} C='container-border-Transfer'>
+              <div className=''>
                 <Card>
                   <Row>
                     <Col xs={12} md={4}>
                       <Card.Img
-                        variant="top"
+                        variant='top'
                         style={{ height: "30vh" }}
                         // src={media}
                       />
                     </Col>
                     <Col xs={12} md={8}>
-                      <h5 style={{ color: "grey" }} className="padding2vw">
+                      <h5 style={{ color: "grey" }} className='padding2vw'>
                         Your supporting donation will benefit
                         {/* {receiver && receiver.name} */}
                       </h5>
@@ -71,7 +69,7 @@ function ReceiverBankAccount() {
                 </Card>
               </div>
               <div>
-                <div className="greenBox">
+                <div className='greenBox'>
                   <Form.Label>
                     <b>Please, input your donation amount </b>
                   </Form.Label>
@@ -79,13 +77,13 @@ function ReceiverBankAccount() {
                     <Row>
                       <Col>
                         <NumberFormat
-                          className="mb-3 numberBox "
+                          className='mb-3 numberBox '
                           thousandSeparator={true}
                           suffix={" VND"}
-                          placeholder="e.g: 300.000 VND"
+                          placeholder='e.g: 300.000 VND'
                           onChange={(e) => {
                             a = parseFloat(
-                              e.target.value.replace(/\VND|,/g, "")
+                              e.target.value.replace(/VND|,/g, "")
                             );
                             setState({ ...state, donation: a });
                           }}
@@ -94,12 +92,12 @@ function ReceiverBankAccount() {
                     </Row>
                   </div>
                 </div>
-                <div className="padding2vw">
+                <div className='padding2vw'>
                   <Form.Label>Your Name (required)</Form.Label>
-                  <InputGroup className="mb-3">
+                  <InputGroup className='mb-3'>
                     <FormControl
-                      className="formControl"
-                      placeholder="e.g: Phuong Ha"
+                      className='formControl'
+                      placeholder='e.g: Phuong Ha'
                       aria-label="Recipient's username"
                       onChange={(e) =>
                         setState({ ...state, name: e.target.value })
@@ -108,10 +106,10 @@ function ReceiverBankAccount() {
                   </InputGroup>
                 </div>
                 <Form.Label>Your Email address (optional)</Form.Label>
-                <InputGroup className="mb-3">
+                <InputGroup className='mb-3'>
                   <FormControl
-                    className="formControl"
-                    placeholder="Please input you email address"
+                    className='formControl'
+                    placeholder='Please input you email address'
                     aria-label="Recipient's username"
                     onChange={(e) =>
                       setState({ ...state, email: e.target.value })
@@ -123,18 +121,18 @@ function ReceiverBankAccount() {
                   regarding the project you support
                 </p>
                 <Form.Label>Write a support comment</Form.Label>
-                <InputGroup className="mb-3 ">
+                <InputGroup className='mb-3 '>
                   <FormControl
-                    as="textarea"
-                    className="textarea   formControl"
-                    placeholder="e.g: I hope you will get better soon!"
+                    as='textarea'
+                    className='textarea   formControl'
+                    placeholder='e.g: I hope you will get better soon!'
                     onChange={(e) =>
                       setState({ ...state, message: e.target.value })
                     }
                   />
                 </InputGroup>
               </div>
-              <ul className="greenBox support">
+              <ul className='greenBox support'>
                 When you support
                 <li>Your name will be posted in supporters list.</li>{" "}
                 <li>You can receive gratitude messages.</li>
@@ -143,11 +141,11 @@ function ReceiverBankAccount() {
                 Please confirm that you have successfully transferred the money
                 to the receiver account
               </div>
-              <div className="verificationButtons">
-                <Imgupload className="rightButton" />
+              <div className='verificationButtons'>
+                <Imgupload className='rightButton' />
                 <Button
-                  variant=""
-                  className="btn-primary-t leftButton"
+                  variant=''
+                  className='btn-primary-t leftButton'
                   onClick={handleOnclick}
                 >
                   Transferred
