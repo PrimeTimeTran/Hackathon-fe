@@ -99,7 +99,7 @@ const formReducer = (state = initialState, action) => {
     case types.CHANGE_PAGE:
       return { ...state, page: payload, subPage: null };
     case types.SUBMIT_ITEMS:
-      return { ...state, items: [] };
+      return { ...state, matchingForm: payload };
     case types.CHANGE_SUBPAGE:
       return { ...state, subPage: payload };
     case types.MATCHING_FORM:
