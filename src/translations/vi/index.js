@@ -18,6 +18,9 @@ export const TRANSLATIONS_VI = {
   money: "Tiền",
   want_to_receive: "Bạn muốn nhận",
   want_to_give: "Bạn muốn cho",
+  your_name: "Tên của bạn",
+  phone_number: "Số điện thoại",
+  next: "Tiếp tục",
   message:
     "Chung tay hỗ trợ bà con về nhu yếu phẩm để cùng nhau vượt qua mùa dịch với tinh thần yêu thương chia sẻ!",
   tab1: "Người cần nhận",

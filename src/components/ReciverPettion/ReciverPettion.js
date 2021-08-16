@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Badge } from "react-bootstrap";
 import Moment from "react-moment";
 import { useTranslation } from "react-i18next";

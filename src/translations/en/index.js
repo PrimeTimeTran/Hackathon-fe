@@ -18,6 +18,9 @@ export const TRANSLATIONS_EN = {
   money: "Money",
   want_to_receive: "You want to receive",
   want_to_give: "You want to give",
+  your_name: "Your Name",
+  phone_number: "Phone Number",
+  next: "Next"
   message:
     "Join hands to support people with necessities to overcome the epidemic season with the spirit of love and sharing!",
   tab1: "People wanting assistance",

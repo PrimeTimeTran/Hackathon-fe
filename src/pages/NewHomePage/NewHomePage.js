@@ -7,10 +7,12 @@ import { useTranslation } from "react-i18next";
 import ReciverPettion from "../../components/ReciverPettion/ReciverPettion";
 import { formActions } from "../../redux/actions/form.actions";
 import { mapActions } from "../../redux/actions/map.actions";
+
 import "./style.css";
 import ProviderPetition from "../../components/ProviderPetition/ProviderPettion";
 import PaginationBar from "../../components/PaginationBar/PaginationBar";
 import NewSideBar from "../../components/NewSideBar/NewSideBar";
+
 import MarkerPopup from "../../components/NewMap/MarkerPopup";
 import Map from "../../components/NewMap/Map";
 

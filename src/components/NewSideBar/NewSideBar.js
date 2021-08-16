@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Button, Card, Col, Modal } from "react-bootstrap";
+
+import { Button, Card, Col, Modal, Form } from "react-bootstrap";
+
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 
@@ -9,12 +11,17 @@ import "./NewSideBar.css";
 
 const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
   const [show, setShow] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [form, setForm] = useState({ phone: "", firstName: "" });
   const dispatch = useDispatch();
 
   const [showDonate, setShowDonate] = useState(false);
   const [receive, setReceive] = useState(false);
   const handleDonateClose = () => {
     setShowDonate(false);
+  };
+  const handleFormClose = () => {
+    setShowForm(false);
     dispatch(formActions.changePage("index"));
   };
   const handleClose = () => {
@@ -47,6 +54,15 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
       setAskShow(false);
     }
     setReceive(true);
+  };
+
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem("user", JSON.stringify(form));
+    dispatch(formActions.submitPhone(form));
+  };
+  const handleOnChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const { t } = useTranslation();
@@ -128,7 +144,50 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
         scrollable
       >
         <Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
-          <MainForm handleClose={handleDonateClose} />
+          <Form onSubmit={handelSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>{t("your_name")}</Form.Label>
+              <Form.Control
+                name="firstName"
+                type="text"
+                placeholder="Ví dụ: Nghi"
+                onChange={handleOnChange}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>{t("phone_number")}</Form.Label>
+              <Form.Control
+                name="phone"
+                type="text"
+                placeholder="Ví dụ: 09870xxxxx"
+                onChange={handleOnChange}
+              />
+            </Form.Group>
+
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={() => {
+                setShowDonate(false);
+                setShowForm(true);
+              }}
+            >
+              {t("next")}
+            </Button>
+          </Form>
+        </Modal.Body>
+      </Modal>
+      {/* Mainform */}
+      <Modal
+        show={showForm}
+        onHide={handleFormClose}
+        fullscreen="sm-down"
+        contentClassName="form-modal-content"
+        scrollable
+      >
+        <Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
+          <MainForm handleClose={handleFormClose} />
         </Modal.Body>
       </Modal>
     </>
