@@ -13,8 +13,8 @@
 }
 
 .infoBox {
-  margin-left: 22.5vw;
-  margin-right: 24.5vw;
+  margin-left: 12vw;
+  margin-right: 12vw;
   font-family: "Roboto", sans-serif;
 }
 
@@ -48,4 +48,11 @@
 .infoBoxButton {
   border-radius: 8%;
   font-size: 20px;
+  color: white;
+  z-index: 1;
+}
+
+.receiverRequestButtons {
+  display: flex;
+  justify-content: space-around;
 }

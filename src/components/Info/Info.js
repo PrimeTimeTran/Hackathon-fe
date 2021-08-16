@@ -1,31 +1,24 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import "./Info.css";
+import { useHistory } from "react-router-dom";
 
 const Info = () => {
+  const history = useHistory();
   return (
     <div className='infoBox'>
       <Card className='infoBoxCard'>
-        <Card.Header className='infoBoxTitle'>
-          Donate or make a Donation Request with Ease!
-        </Card.Header>
         <Card.Body className='infoBody'>
           <div className='leftSide'>
-            <Card.Title className='infoBoxSubTitle'>
-              Donate Money to People in Need
-            </Card.Title>
+            <Card.Title className='infoBoxSubTitle'>Donate Goods</Card.Title>
             <Card.Text className='infoBoxText'>
               With two simple clicks you can donate money to people near you or
               in whole Vietnam who are currently struggling to maintain a
-              regular life. Simply chose a person you want to help from the
-              options below, choose to donate and make a bank transfer directly
-              to the person in need. No intermediary or other organizations are
-              involved! Your money goes directly to the person in need.
+              regular life. Your money goes directly to the person in need.
             </Card.Text>
             <Card.Text className='infoBoxText'>
               You would rather donate goods such as food, cloathes or hygenic
-              masks? Please click the button below and you will be redirected to
-              goods donation page and help people in your area right now!
+              masks?
             </Card.Text>
             <Button variant='primary' className='infoBoxButton'>
               I want to donate goods
@@ -42,12 +35,29 @@ const Info = () => {
               clicks!
             </Card.Text>
             <Card.Text className='infoBoxText'>
-              Press the button below, sign up and join our community to receive
-              help as soon as possible!
+              Press the button below to sign up or or request a donation with
+              only a few clicks!
             </Card.Text>
-            <Button variant='primary' className='infoBoxButton'>
-              Sign up
-            </Button>
+            <div className='receiverRequestButtons'>
+              <Button
+                onClick={() => {
+                  history.push(`/signup`);
+                }}
+                variant='primary'
+                className='infoBoxButton'
+              >
+                Sign up
+              </Button>
+              <Button
+                onClick={() => {
+                  history.push(`/request`);
+                }}
+                variant='primary'
+                className='infoBoxButton'
+              >
+                Request a Donation
+              </Button>
+            </div>
           </div>
         </Card.Body>
       </Card>

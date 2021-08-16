@@ -3,6 +3,7 @@ import * as types from "../constants/petition.constants";
 const initialState = {
   recivers: [],
   providers: [],
+  petitions: [],
   totalPageNum: 1,
   selectedPetition: null,
   loading: false,
@@ -14,6 +15,7 @@ const petitionReducer = (state = initialState, action) => {
     case types.GET_RECEIVERS_REQUEST:
     case types.GET_PROVIDERS_REQUEST:
     case types.GET_SINGLE_RECEIVER_REQUEST:
+    case types.GET_ALL_PETITION_REQUEST:
       return { ...state, loading: true };
 
     case types.GET_RECEIVERS_SUCCESS:
@@ -37,10 +39,17 @@ const petitionReducer = (state = initialState, action) => {
         selectedPetition: payload,
         loading: false,
       };
+    case types.GET_ALL_PETITION_SUCCESS:
+      return {
+        ...state,
+        petitions: payload,
+        loading: false,
+      };
 
     case types.GET_RECEIVERS_FAILURE:
     case types.GET_SINGLE_RECEIVER_FAILURE:
     case types.GET_PROVIDERS_FAILURE:
+    case types.GET_ALL_PETITION_FAILURE:
       return { ...state, loading: false };
 
     default:

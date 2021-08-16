@@ -21,17 +21,17 @@ const Imgupload = () => {
     <div>
       <button
         onClick={myWidget.open}
-        id="upload_widget"
-        class="cloudinary-button"
+        id='upload_widget'
+        class='cloudinary-button'
       >
-        Upload files
+        Upload pictures
       </button>
       <img
-        height="300px"
-        width="300px"
-        className="veripic"
+        height='300px'
+        width='300px'
+        className='veripic'
         src={imageURL}
-        alt="picture"
+        alt='img_upload'
         style={imageURL ? { display: "block" } : { display: "none" }}
       />
     </div>

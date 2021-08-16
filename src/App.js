@@ -15,6 +15,10 @@ import FundingPage from './pages/FundingPage';
 import FundRequestDetailPage from '../src/pages/FundRequestDetailPage/FundRequestDetailPage';
 import NewHomePage from './pages/NewHomePage/NewHomePage';
 import NewFooter from './components/NewFooter/NewFooter';
+import FundDonationBankTransfer from './pages/FundDonationBankTransfer/FundDonationBankTransfer';
+import FundRequestPage from './pages/FundRequestPage/FundRequestPage';
+import SignUpPage from './pages/SignUp/SignUpPage';
+import LogInPage from './pages/LogInPage/LogInPage'
 
 function App() {
 	const history = useHistory();
@@ -43,7 +47,17 @@ function App() {
 				</Route>
 				<Route path="/map" exact component={HomePage} />
 				<Route path="/fundRequestDetailPage" exact component={FundRequestDetailPage} />
-				<Route path="*" component={NotFound} />
+				
+				<Route path="/funding/:id" exact component={FundRequestDetailPage} />
+          <Route
+            path="/funding/transfer/:id"
+            exact
+            component={FundDonationBankTransfer}
+          />
+          <Route path="/request" exact component={FundRequestPage} />
+          <Route path="/signup" exact component={SignUpPage} />
+          <Route path="/login" exact component={LogInPage} />
+					<Route path="*" component={NotFound} />
 			</Switch>
 			<NewFooter />
 		</div>
