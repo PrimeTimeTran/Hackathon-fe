@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Tab, Tabs, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import ReciverPettion from "../../components/ReciverPettion/ReciverPettion";
 import { useHistory } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+import ReciverPettion from "../../components/ReciverPettion/ReciverPettion";
 import { formActions } from "../../redux/actions/form.actions";
 import { mapActions } from "../../redux/actions/map.actions";
 
@@ -19,6 +21,7 @@ import "./style.css";
 
 const NewHomePage = ({ handleClick }) => {
   const [pageNum, setPageNum] = useState(1);
+  const { t } = useTranslation();
 
   const [show, setShow] = useState(false);
   const [markerShow, setMarkerShow] = useState(false);
@@ -66,10 +69,7 @@ const NewHomePage = ({ handleClick }) => {
             <Row>
               <Col style={{ padding: "4rem", paddingTop: "2rem" }}>
                 <h1>SOS map</h1>
-                <h3>
-                  Chung tay hỗ trợ bà con về nhu yếu phẩm để cùng nhau vượt qua
-                  mùa dịch với tinh thần yêu thương chia sẻ!
-                </h3>
+                <h3>{t("message")}</h3>
               </Col>
               <Col>
                 {recivers.newPetitions?.length &&
@@ -111,7 +111,7 @@ const NewHomePage = ({ handleClick }) => {
               >
                 <Tab
                   eventKey="recivers"
-                  title="Người cần nhận"
+                  title={t("tab1")}
                   className="tab-title"
                 >
                   {recivers.newPetitions?.length ? (
@@ -129,7 +129,7 @@ const NewHomePage = ({ handleClick }) => {
                     <p>There are no Reciver</p>
                   )}
                 </Tab>
-                <Tab eventKey="providers" title="Người cần cho">
+                <Tab eventKey="providers" title={t("tab2")}>
                   {providers.newPetitions?.length ? (
                     <>
                       {providers.newPetitions.map((provider) => (
