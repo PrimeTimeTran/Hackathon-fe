@@ -12,7 +12,6 @@ import { useDispatch } from "react-redux";
 import { mapActions } from "../../redux/actions/map.actions";
 
 const Map = ({ receivers, providers, setMarkerShow }) => {
-  console.log(receivers);
   const dispatch = useDispatch();
   const [geocode, setGeocode] = useState({
     lat: 10.77788992345464,
@@ -37,7 +36,7 @@ const Map = ({ receivers, providers, setMarkerShow }) => {
   };
 
   const onLoad = (marker) => {
-    console.log("marker: ", marker);
+    // console.log("marker: ", marker);
   };
 
   // set Google Maps Geocoding API for purposes of quota management. Its optional but recommended.
@@ -50,21 +49,7 @@ const Map = ({ receivers, providers, setMarkerShow }) => {
   Geocode.setLocationType("ROOFTOP");
   Geocode.enableDebug();
 
-  // Get latitude & longitude from address.
-  // Geocode.fromAddress("Eiffel Tower").then(
-  //   (response) => {
-  //     const { lat, lng } = response.results[0].geometry.location;
-  //     console.log(lat, lng);
-  //   },
-  //   (error) => {
-  //     console.error(error);
-  //   }
-  // );
   const users = receivers.newPetitions?.concat(providers.newPetitions);
-
-  console.log("rêciieiee", receivers);
-
-  console.log(users);
 
   const showUserModal = (user) => {
     dispatch(mapActions.selectMarker(user));
@@ -87,7 +72,6 @@ const Map = ({ receivers, providers, setMarkerShow }) => {
         <MarkerClusterer gridSize={150} options={options} averageCenter={true}>
           {(clusterer) =>
             users?.map((user) => {
-              console.log("user", user);
               if (user.type === "receive")
                 return (
                   <Marker
@@ -123,7 +107,6 @@ const Map = ({ receivers, providers, setMarkerShow }) => {
             travelMode: "DRIVING",
           }}
           callback={(res) => {
-            console.log("RESPONSE", res);
           }}
         />
       </GoogleMap>

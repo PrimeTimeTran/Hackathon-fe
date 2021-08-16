@@ -6,3 +6,4 @@ export const SUBMIT_ITEMS = "FORM.SUBMIT_ITEMS";
 
 export const MATCHING_FORM = "FORM.MATCHING_FORM";
 export const GET_RECEIVER = "FORM.GET_RECEIVER";
+export const POST_PHONE = "FORM.POST_PHONE";

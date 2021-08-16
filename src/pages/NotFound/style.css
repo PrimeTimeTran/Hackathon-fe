@@ -1,0 +1,12 @@
+#root,
+.App {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+.page-not-found {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

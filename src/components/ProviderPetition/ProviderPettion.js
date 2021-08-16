@@ -15,7 +15,7 @@ const ProviderPetition = ({ provider, handleClick }) => {
           alt="charity-img"
         />
 
-        <div className="provider_Descrip">
+        <div>
           <div className="provider_body">
             <div className="formgiver">
               <Badge style={{ "text-indent": "0.5em" }} bg="success">
@@ -27,7 +27,7 @@ const ProviderPetition = ({ provider, handleClick }) => {
 
               <br />
             </div>
-            <div className="itemName">
+            <div className="ml-1">
               {provider?.items?.map((item) => (
                 <>
                   <div>{`Type: ${item.type}`}</div>
