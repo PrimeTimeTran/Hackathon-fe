@@ -50,8 +50,8 @@ const matchingForm = (user) => async (dispatch) => {
 
 const getSingleForm = ({ id }) => async (dispatch) => {
   try {
-    const res = await api.get(`/form/${id}`);
-    const data = res.data.data.form;
+    const res = await api.get(`/petitions/${id}`);
+    const data = res.data.data.petition;
     dispatch({ type: types.GET_RECEIVER, payload: data });
   } catch (err) {
     toast.error(err.message);
