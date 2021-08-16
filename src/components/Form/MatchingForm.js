@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { formActions } from "../../redux/actions/form.actions";
 
 const MatchingForm = () => {
   const matchingForm = useSelector((state) => state.form.matchingForm);
-  const user = useSelector((state) => state.form.user);
+  // const user = useSelector((state) => state.form.user);
   const dispatch = useDispatch();
-  useEffect(() => {
+  /* useEffect(() => {
     dispatch(formActions.matchingForm(user));
-  }, []);
+  }, [dispatch]); */
 
   // console.log(matchingForm);
 
