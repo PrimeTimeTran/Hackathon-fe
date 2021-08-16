@@ -33,7 +33,7 @@ const Blog = () => {
 					<div className="blog-banner-subtext">Nơi điều kỳ diệu bắt đầu</div>
 				</div>
 			</div>
-			<Container className="blog-cards d-flex flex-column align-items-center">
+			<Container className="blog-cards d-flex flex-column align-items-center mt-2">
 				{blogs.map((item, index) => (
 					<Row className={`blog-card ${index % 2 ? 'flex-row-reverse' : ''}`}>
 						<Col xl={7} className="blog-card-photo p-0">
