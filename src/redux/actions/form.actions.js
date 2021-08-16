@@ -21,17 +21,19 @@ const changeSubpage = (toPage) => async (dispatch) => {
 };
 
 const submitItems = ({ selectedItems, user }) => async (dispatch) => {
-  const { phone, firstName } = user;
+  const { phone, firstName, lat, lng } = user;
   const postRequest = {
     phone,
     firstName,
+    lat,
+    lng,
     petitionType: "provide",
     itemArray: selectedItems,
   };
 
   try {
     const res = await api.post("/petitions/new", postRequest);
-    dispatch({ type: types.SUBMIT_ITEMS, payload: res });
+    dispatch({ type: types.SUBMIT_ITEMS, payload: res.data.data.newPetitions });
   } catch (err) {
     toast.error(err.message);
   }
@@ -56,9 +58,12 @@ const getSingleForm = ({ id }) => async (dispatch) => {
   }
 };
 
-const submitPhone = ({ phone, firstName }) => async (dispatch) => {
+const submitPhone = ({ phone, firstName, lat, lng }) => async (dispatch) => {
   try {
-    dispatch({ type: types.POST_PHONE, payload: { phone, firstName } });
+    dispatch({
+      type: types.POST_PHONE,
+      payload: { phone, firstName, lat, lng },
+    });
   } catch (err) {
     toast.error(err.message);
   }

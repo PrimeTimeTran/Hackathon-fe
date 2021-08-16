@@ -8,10 +8,15 @@ import { useTranslation } from "react-i18next";
 import { formActions } from "../../redux/actions/form.actions";
 import MainForm from "../Form/MainForm";
 import "./NewSideBar.css";
+import { useEffect } from "react";
 
 const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
   const [show, setShow] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [geocode, setGeocode] = useState({
+    lat: 10.77788992345464,
+    lng: 106.69517319605292,
+  });
   const [form, setForm] = useState({ phone: "", firstName: "" });
   const dispatch = useDispatch();
 
@@ -59,7 +64,7 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
   const handelSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("user", JSON.stringify(form));
-    dispatch(formActions.submitPhone(form));
+    dispatch(formActions.submitPhone({ ...form, ...geocode }));
   };
   const handleOnChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -67,6 +72,16 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
 
   const { t } = useTranslation();
 
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        // console.log('Latitude is :', position.coords.latitude);
+        setGeocode({ ...geocode, lat: position.coords.latitude });
+        // console.log('Longitude is :', position.coords.longitude);
+        setGeocode({ ...geocode, lng: position.coords.longitude });
+      });
+    }
+  }, [geocode]);
 
   return (
     <>
@@ -144,7 +159,10 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
         scrollable
       >
         <Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
-          <Form onSubmit={handelSubmit}>
+          <Form
+            onSubmit={handelSubmit}
+            style={{ height: "50%", margin: "auto" }}
+          >
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>{t("your_name")}</Form.Label>
               <Form.Control
