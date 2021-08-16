@@ -11,8 +11,8 @@ const BlogAdmin = () => {
 	const blogs = useSelector((state) => state.blog.blogList);
 	const dispatch = useDispatch();
 	useEffect(() => {
-    dispatch(blogActions.getAllBlogs());
-  }, [dispatch]);
+		dispatch(blogActions.getAllBlogs());
+	}, [dispatch]);
 	return (
 		<div className="blog-detail-page d-flex flex-column align-items-center">
 			<div className="p-3 w-100 container d-flex flex-column align-items-center">

@@ -21,8 +21,8 @@ const Blog = () => {
 		return strSplits.slice(0, num).join('') + '...';
 	};
 	useEffect(() => {
-    dispatch(blogActions.getAllBlogs());
-  }, [dispatch]);
+		dispatch(blogActions.getAllBlogs());
+	}, [dispatch]);
 	return (
 		<div className="blog-page">
 			<div className="blog-banner">
