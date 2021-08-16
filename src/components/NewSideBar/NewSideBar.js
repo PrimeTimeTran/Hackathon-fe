@@ -159,7 +159,10 @@ const NewSideBar = ({ topBar, setAskShow, modalShow, setModalShow }) => {
         scrollable
       >
         <Modal.Body className="d-flex justify-content-center p-0 main-form-modal">
-          <Form onSubmit={handelSubmit}>
+          <Form
+            onSubmit={handelSubmit}
+            style={{ height: "50%", margin: "auto" }}
+          >
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>{t("your_name")}</Form.Label>
               <Form.Control
