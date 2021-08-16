@@ -10,13 +10,14 @@ import './style.css';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { blogActions } from '../../redux/actions/blog.actions';
+import { useTranslation } from 'react-i18next';
 
 const BlogEditor = ({ createNew }) => {
 	const { slug } = useParams();
+	const { t } = useTranslation();
 	const title = useSelector((state) => state.blog.selectedBlog.title);
 	const author = useSelector((state) => state.blog.selectedBlog.author);
 	const body = useSelector((state) => state.blog.selectedBlog.body);
-
 	const blog = useSelector((state) => state.blog.selectedBlog);
 	const cover_photo = useSelector((state) => state.blog.selectedBlog.cover_photo);
 	const quillRef = React.useRef(null);
@@ -131,8 +132,8 @@ const BlogEditor = ({ createNew }) => {
 				<div className="blog-card-title-wrapper d-flex justify-content-center" style={{ maxWidth: 400 }}>
 					<div className="blog-card-title">Preview</div>
 				</div>
-				<div className="blog-cards d-flex flex-column align-items-center">
-					<Row className="blog-card m-0">
+				<div className="blog-cards d-flex flex-column align-items-center w-100">
+					<Row className="blog-card m-0 w-100">
 						<Col xl={7} className="blog-card-photo p-0">
 							<img src={cover_photo || 'https://vnpi-hcm.vn/wp-content/uploads/2018/01/no-image-800x600.png'} alt="demo" />
 						</Col>
@@ -141,12 +142,12 @@ const BlogEditor = ({ createNew }) => {
 								<div className="blog-card-title">{title || 'Title of the Post'}</div>
 							</div>
 							<div className="blog-card-credit">
-								Viết bởi <i>{author || 'Unknown'}</i> vào {blog.createdAt || moment(Date.now()).format('DD-MM-yyyy')}
+								{t('written_by')} <i>{author || 'Unknown'}</i> {t('at_time').toLowerCase()} {blog.createdAt || moment(Date.now()).format('DD-MM-yyyy')}
 							</div>
 							<div>❤️</div>
 							<div className="blog-card-content">{stripTag(body) ? truncate(stripTag(body), 25) : 'Excerpt of the post'}</div>
 							<div className="blog-card-read-more">
-								<span>Đọc thêm</span>
+								<span>{t('read_more')}</span>
 							</div>
 						</Col>
 					</Row>

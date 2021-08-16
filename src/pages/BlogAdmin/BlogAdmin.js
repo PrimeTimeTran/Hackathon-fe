@@ -44,7 +44,9 @@ const BlogAdmin = () => {
 					</tbody>
 				</table>
 				<div className="text-center">
-					<Button variant="outline-secondary">New Post</Button>
+					<Link to="/admin/blog/new">
+						<Button variant="outline-secondary">New Post</Button>
+					</Link>
 				</div>
 			</div>
 		</div>

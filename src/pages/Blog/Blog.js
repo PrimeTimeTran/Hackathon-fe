@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { blogActions } from '../../redux/actions/blog.actions';
 import './style.css';
 
 const Blog = () => {
+	const { t } = useTranslation();
 	const blogs = useSelector((state) => state.blog.blogList);
 	const dispatch = useDispatch();
 	const stripTag = (str) => {
@@ -41,13 +43,13 @@ const Blog = () => {
 								<div className="blog-card-title">{item.title}</div>
 							</div>
 							<div className="blog-card-credit">
-								Viết bởi <i>{item.author}</i> vào {item.createdAt}
+								{t('written_by')} <i>{item.author}</i> {t('at_time').toLowerCase()} {item.createdAt}
 							</div>
 							<div>❤️</div>
 							<div className="blog-card-content">{truncate(stripTag(item.body), 25)}</div>
 							<div className="blog-card-read-more">
 								<Link to={`/blog/${item.slug}`}>
-									<span>Đọc thêm</span>
+									<span>{t('read_more')}</span>
 								</Link>
 							</div>
 						</Col>
