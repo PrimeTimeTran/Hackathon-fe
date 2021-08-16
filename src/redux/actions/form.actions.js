@@ -21,13 +21,13 @@ const changeSubpage = (toPage) => async (dispatch) => {
 };
 
 const submitItems = ({ selectedItems, user }) => async (dispatch) => {
-  const { phone, firstName, lat, lng } = user;
+  const { phone, firstName, lat, lng, petitionType } = user;
   const postRequest = {
     phone,
     firstName,
     lat,
     lng,
-    petitionType: "provide",
+    petitionType,
     itemArray: selectedItems,
   };
 
@@ -50,19 +50,21 @@ const matchingForm = (user) => async (dispatch) => {
 
 const getSingleForm = ({ id }) => async (dispatch) => {
   try {
-    const res = await api.get(`/form/${id}`);
-    const data = res.data.data.form;
+    const res = await api.get(`/petitions/${id}`);
+    const data = res.data.data.petition;
     dispatch({ type: types.GET_RECEIVER, payload: data });
   } catch (err) {
     toast.error(err.message);
   }
 };
 
-const submitPhone = ({ phone, firstName, lat, lng }) => async (dispatch) => {
+const submitPhone = ({ phone, firstName, lat, lng, petitionType }) => async (
+  dispatch
+) => {
   try {
     dispatch({
       type: types.POST_PHONE,
-      payload: { phone, firstName, lat, lng },
+      payload: { phone, firstName, lat, lng, petitionType },
     });
   } catch (err) {
     toast.error(err.message);
