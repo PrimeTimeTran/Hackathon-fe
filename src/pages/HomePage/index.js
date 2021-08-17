@@ -8,7 +8,6 @@ import {
   ButtonGroup,
 } from "react-bootstrap";
 import moment from 'moment'
-import i18n from "i18next";
 import { useTranslation } from "react-i18next";
 import "../../translations/i18n";
 import { useHistory } from "react-router";
@@ -109,37 +108,18 @@ function HomePage() {
     setPetitions(selected);
   }
 
-  const [language, setLanguage] = useState("en");
   const history = useHistory();
-
-  const handleChangeLanguage = (e) => {
-    e.preventDefault();
-    setLanguage(e.target.value);
-    i18n.changeLanguage(e.target.value);
-  };
-
-  const languages = ['zh', 'vi', 'en']
 
   return (
     <Row>
       <Col
         md="3"
-        className="pl-5"
+        className="p-3"
         style={{ maxHeight: "100vh", overflowY: "scroll" }}
       >
         <Form className="m-3">
           <Form.Control type="query" placeholder="Facemasks..." />
         </Form>
-        <h3>
-          {t("welcome")} in {language}
-        </h3>
-        {languages.map((l) => {
-          return (
-            <button onClick={handleChangeLanguage} value={l}>
-              {l}
-            </button>
-          );
-        })}
         <button onClick={()=>{history.push("/funding")}}>funding page</button>
         <h3>{selectedPetitionType}</h3>
         <SelectedPetitionInfoPanelSidebar petition={selectedPetition} />

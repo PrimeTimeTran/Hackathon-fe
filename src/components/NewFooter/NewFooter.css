@@ -10,8 +10,6 @@
 }
 
 .subBox1 {
-  /* border: 1px solid red; */
-  display: flex;
   justify-content: center;
   align-items: center;
   color: #ff4c68 !important;
@@ -37,14 +35,14 @@
 .subBoxIcon {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   color: #ff4c68 !important;
+  justify-content: space-between;
 }
 
 .iconFooter {
-  align-items: center;
   margin-left: 15px;
+  align-items: center;
 }
 
 a {

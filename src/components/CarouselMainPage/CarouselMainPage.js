@@ -6,8 +6,6 @@ import "./Style2.css";
 function CarouselMainPage() {
   const isSmall = useMediaQuery("(max-width: 576px)");
   const isMedium = useMediaQuery("(min-width:576px) and (max-width:768px)");
-  const isLarge = useMediaQuery("(max-width:992px)");
-  const url = "";
   return (
     <div
       className="bg-pink  py-5  "
